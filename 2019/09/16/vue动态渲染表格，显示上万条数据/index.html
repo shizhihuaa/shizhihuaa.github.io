@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="渲染上万条数据，全部渲染肯定会卡顿，所以动态渲染表格，拖拽滚动条的时候才去渲染数据">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue动态渲染表格，显示上万条数据">
+<meta property="og:url" content="http://shizhihuaa.github.io/2019/09/16/vue动态渲染表格，显示上万条数据/index.html">
+<meta property="og:site_name" content="花花的开发总结">
+<meta property="og:description" content="渲染上万条数据，全部渲染肯定会卡顿，所以动态渲染表格，拖拽滚动条的时候才去渲染数据">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-16T02:23:25.332Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue动态渲染表格，显示上万条数据">
+<meta name="twitter:description" content="渲染上万条数据，全部渲染肯定会卡顿，所以动态渲染表格，拖拽滚动条的时候才去渲染数据">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://shizhihuaa.github.io/2019/09/16/vue动态渲染表格，显示上万条数据/">
+
+
+
+
+
+  <title>vue动态渲染表格，显示上万条数据 | 花花的开发总结</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9bdd2d5bd2f082bd61cc47b8221002a4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花花的开发总结</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序媛</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/09/16/vue动态渲染表格，显示上万条数据/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue动态渲染表格，显示上万条数据</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T09:39:56+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>渲染上万条数据，全部渲染肯定会卡顿，所以动态渲染表格，拖拽滚动条的时候才去渲染数据</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">      &lt;!-- 表格 --&gt;</span><br><span class="line">    &lt;div class=<span class="string">"table-box"</span>&gt;</span><br><span class="line">      &lt;div class=<span class="string">"tabletbody"</span>&gt;</span><br><span class="line">        &lt;div id=<span class="string">"divScroll"</span> style=<span class="string">"float:right;"</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">"tableContain"</span>&gt;</span><br><span class="line">          &lt;table class=<span class="string">"tbody mainTable"</span>&gt;</span><br><span class="line">            &lt;thead&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">              &lt;td &gt;名次&lt;/td&gt;</span><br><span class="line">              &lt;!--&lt;td v-if=<span class="string">"object_type==1"</span>&gt;序号&lt;/td&gt;--&gt;</span><br><span class="line">              &lt;td &gt;会员名称&lt;/td&gt;</span><br><span class="line">              &lt;td &gt;足环号&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==0"</span>&gt;地区&lt;/td&gt;</span><br><span class="line">              &lt;td &gt;羽色&lt;/td&gt;</span><br><span class="line">              &lt;td &gt;归巢时间&lt;/td&gt;</span><br><span class="line">              &lt;td &gt;分速(米/分)&lt;/td&gt;</span><br><span class="line">              &lt;td&gt;电子环号&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;空距(公里)&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;空距差(米)&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;上传时间&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;实时经度&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;实时纬度&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;鸽舍经度&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;鸽舍纬度&lt;/td&gt;</span><br><span class="line">              &lt;td v-if=<span class="string">"object_type==1"</span>&gt;奖项编号&lt;/td&gt;</span><br><span class="line"> </span><br><span class="line">              &lt;td &gt;通道板&lt;/td&gt;</span><br><span class="line">              &lt;!--&lt;td v-if=<span class="string">"object_type==1"</span>&gt;状态&lt;/td&gt;--&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;/thead&gt;</span><br><span class="line">            &lt;tbody id=<span class="string">"tblList"</span>&gt;</span><br><span class="line">            &lt;tr id=<span class="string">"trTpl"</span>&gt;</span><br><span class="line">              &lt;td id=<span class="string">"row_num"</span> v-if=<span class="string">"object_type==1"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;!--&lt;td id=<span class="string">"homing_sn"</span> v-if=<span class="string">"object_type==1"</span>&gt; &lt;/td&gt;--&gt;</span><br><span class="line">              &lt;td id=<span class="string">"homing_sn"</span> v-if=<span class="string">"object_type==0"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"member_name"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"foot_ring_sn"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"province_city"</span> v-if=<span class="string">"object_type==0"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"plumage_color"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"homing_time"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"speed"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"electric_sn"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"memo"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"distance"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"save_time"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"sensor_longitude"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"sensor_latitude"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"dovecote_longitude"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"dovecote_latitude"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"prize_list"</span> v-if=<span class="string">"object_type==1"</span>&gt;&lt;/td&gt;</span><br><span class="line">              &lt;td id=<span class="string">"channel_plate_sn"</span>&gt; &lt;/td&gt;</span><br><span class="line">              &lt;!--&lt;td id=<span class="string">"pigeon_state"</span> v-if=<span class="string">"object_type==1"</span>&gt; &lt;/td&gt;--&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;/tbody&gt;</span><br><span class="line">          &lt;/table&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/ecmascript-6"</span>&gt;</span><br><span class="line">  <span class="built_in">export</span> default &#123;</span><br><span class="line">    <span class="function"><span class="title">data</span></span>()&#123;</span><br><span class="line">      <span class="built_in">return</span>&#123;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      <span class="function"><span class="title">tabledata</span></span>()&#123;</span><br><span class="line">        //30 是表格表头的高度</span><br><span class="line">        <span class="built_in">let</span> height = parseInt($(<span class="string">".waitingHome .table-box"</span>).css(<span class="string">"height"</span>))-parseInt($(<span class="string">".waitingHome .status-box"</span>).css(<span class="string">"height"</span>))-30;</span><br><span class="line">        console.log(height,<span class="string">"获取到的表格高度"</span>);</span><br><span class="line">        //tblList</span><br><span class="line">        console.log(<span class="string">"一行的高度"</span>,$(<span class="string">".waitingHome .tblList tr"</span>));</span><br><span class="line">        <span class="built_in">let</span> that=this;</span><br><span class="line">        //总赛鸽数</span><br><span class="line">        <span class="built_in">let</span> alldove=this.table.length;</span><br><span class="line">        this.scrbar.setOptions(&#123; total: alldove,size:height &#125;); //总数据条数  显示表格高度</span><br><span class="line">        this.scrbar.onScroll = <span class="keyword">function</span>(pos) &#123; ShowData(pos); &#125;; //滚动的时候  滚动高度返回</span><br><span class="line">        var items = this.scrbar.getPageItems(); //计算一页显示条数</span><br><span class="line">        var tpl = document.getElementById(<span class="string">"trTpl"</span>);//创建模板表格单行</span><br><span class="line">        tpl.parentNode.removeChild(tpl); //单行的父节点除去子节点</span><br><span class="line">        var list = document.getElementById(<span class="string">"tblList"</span>);//创建列表</span><br><span class="line">        <span class="keyword">for</span> (var i = 0; i &lt; alldove &amp;&amp; i &lt; parseInt(items); i++) &#123;//一屏显示条数，创建表格</span><br><span class="line">          var nr = tpl.cloneNode(<span class="literal">true</span>);</span><br><span class="line">          list.appendChild(nr);</span><br><span class="line">        &#125;</span><br><span class="line">        //判断所有的归巢数是否多于屏幕显示数</span><br><span class="line">        <span class="keyword">if</span>(this.object_type==0)&#123;</span><br><span class="line">          //条数-渲染条数</span><br><span class="line">          <span class="built_in">let</span> allheight=alldove*this.itemHeight;</span><br><span class="line">//          <span class="built_in">let</span> allheight=height;</span><br><span class="line">          $(<span class="string">".scrollbox"</span>).animate(&#123;scrollTop:allheight&#125;,0);//条数*高度</span><br><span class="line">//          $(<span class="string">".scrollbox"</span>).animate(&#123;scrollTop:2000&#125;,0);//条数*高度</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(this.object_type==1)&#123;</span><br><span class="line">          //条数-渲染条数</span><br><span class="line">//           $(<span class="string">".scrollbox"</span>).animate(&#123;scrollTop:0&#125;,0);//条数*高度</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="built_in">let</span> item;</span><br><span class="line">        <span class="keyword">if</span>(this.object_type==0)&#123;</span><br><span class="line">          <span class="keyword">if</span>(alldove&gt;parseInt(items))&#123;//22&gt;21</span><br><span class="line">//            item=parseInt(items+Number(1));</span><br><span class="line">            item=parseInt(items);</span><br><span class="line">            ShowData(parseInt(alldove-parseInt(items)));//21条数据</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            item=parseInt(alldove);</span><br><span class="line">            ShowData(that.scrbar.getPos());</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(this.object_type==1)&#123;</span><br><span class="line">          <span class="keyword">if</span>(alldove&gt;items)&#123;</span><br><span class="line">//            item=parseInt(items+Number(1));</span><br><span class="line">            item=parseInt(items);</span><br><span class="line">            ShowData(that.scrbar.getPos());</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            item=parseInt(alldove);</span><br><span class="line">            ShowData(that.scrbar.getPos());</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //去掉渲染多余的空表格</span><br><span class="line">        //item 21</span><br><span class="line">        $(<span class="string">"#tblList tr"</span>).filter(<span class="keyword">function</span>(index) &#123;</span><br><span class="line">          <span class="built_in">return</span> $(<span class="string">"td:empty"</span>, this);</span><br><span class="line">        &#125;).slice(item).remove();</span><br><span class="line">        //ShowData(that.scrbar.getPos());//滚动位置显示条数</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">        <span class="keyword">function</span> ShowData(pos) &#123;</span><br><span class="line">            var n;//计算一页显示条数</span><br><span class="line">            <span class="keyword">if</span>(alldove&gt;items)&#123;</span><br><span class="line">              n=parseInt(that.scrbar.getPageItems());</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              n=alldove;</span><br><span class="line">            &#125;</span><br><span class="line">            var rows=document.getElementById(<span class="string">"tblList"</span>).rows;//返回表格所有行</span><br><span class="line">            <span class="keyword">for</span> (var i = 0; i &lt;n; i++)&#123;//一页显示条数</span><br><span class="line">              var row = rows[i];</span><br><span class="line">              var item = that.table[i + pos];//滚动位置加上显示条数=应该有的条数</span><br><span class="line">              <span class="keyword">if</span>(that.object_type==1)&#123;</span><br><span class="line">                row.cells[<span class="string">"row_num"</span>].innerHTML = item[<span class="string">"row_num"</span>];</span><br><span class="line">                row.cells[<span class="string">"distance"</span>].innerHTML = item[<span class="string">"distance"</span>];</span><br><span class="line">                row.cells[<span class="string">"memo"</span>].innerHTML = item[<span class="string">"memo"</span>].split(<span class="string">","</span>)[0]/1000;</span><br><span class="line">                row.cells[<span class="string">"save_time"</span>].innerHTML = item[<span class="string">"save_time"</span>];</span><br><span class="line">                row.cells[<span class="string">"sensor_longitude"</span>].innerHTML = item[<span class="string">"sensor_longitude"</span>];</span><br><span class="line">                row.cells[<span class="string">"sensor_latitude"</span>].innerHTML = item[<span class="string">"sensor_latitude"</span>];</span><br><span class="line">                row.cells[<span class="string">"dovecote_longitude"</span>].innerHTML = item[<span class="string">"dovecote_longitude"</span>];</span><br><span class="line">                row.cells[<span class="string">"dovecote_latitude"</span>].innerHTML = item[<span class="string">"dovecote_latitude"</span>];</span><br><span class="line">                row.cells[<span class="string">"prize_list"</span>].innerHTML = item[<span class="string">"prize_list"</span>];</span><br><span class="line"> </span><br><span class="line">                $(row.cells[<span class="string">"distance"</span>]).parents(<span class="string">"tr"</span>).css(<span class="string">"background"</span>,<span class="string">'#fff'</span>);</span><br><span class="line">                <span class="keyword">if</span>(item[<span class="string">"pigeon_state"</span>]==<span class="string">'3'</span>)&#123;</span><br><span class="line">                  //修改这个颜色时一定要注意！！！之后有关于这个颜色的判断</span><br><span class="line">                  $(row.cells[<span class="string">"distance"</span>]).parents(<span class="string">"tr"</span>).css(<span class="string">"background"</span>,<span class="string">'#FF7979'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                $(row.cells[<span class="string">"distance"</span>]).parents(<span class="string">"tr"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">                  that.setElectricSn=$(this).children(<span class="string">"#electric_sn"</span>).text();</span><br><span class="line">                  that.setGroupVisible=<span class="literal">true</span>;</span><br><span class="line">                  <span class="keyword">if</span>($(this).css(<span class="string">"backgroundColor"</span>)==<span class="string">"rgb(255, 121, 121)"</span>)&#123;</span><br><span class="line">                    that.setDataFlag=<span class="literal">false</span>;</span><br><span class="line">                  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    that.setDataFlag=<span class="literal">true</span>;</span><br><span class="line">                    that.homeState=<span class="string">'0'</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">              &#125;<span class="keyword">else</span> <span class="keyword">if</span>(that.object_type==0)&#123;</span><br><span class="line">                row.cells[<span class="string">"homing_sn"</span>].innerHTML = item[<span class="string">"homing_sn"</span>];</span><br><span class="line"> </span><br><span class="line">                <span class="keyword">if</span>(item[<span class="string">"province_city"</span>].length&gt;5)&#123;</span><br><span class="line">                  row.cells[<span class="string">"province_city"</span>].innerHTML = item[<span class="string">"province_city"</span>].slice(0,5)+<span class="string">'...'</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                  row.cells[<span class="string">"province_city"</span>].innerHTML = item[<span class="string">"province_city"</span>];</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">              row.cells[<span class="string">"electric_sn"</span>].innerHTML = item[<span class="string">"electric_sn"</span>];</span><br><span class="line">              row.cells[<span class="string">"channel_plate_sn"</span>].innerHTML = item[<span class="string">"channel_plate_sn"</span>];</span><br><span class="line">              <span class="keyword">if</span>(item[<span class="string">"member_name"</span>].length&gt;8)&#123;</span><br><span class="line">                row.cells[<span class="string">"member_name"</span>].innerHTML = item[<span class="string">"member_name"</span>].slice(0,8)+<span class="string">'...'</span>;</span><br><span class="line">              &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                row.cells[<span class="string">"member_name"</span>].innerHTML = item[<span class="string">"member_name"</span>];</span><br><span class="line">              &#125;</span><br><span class="line">              row.cells[<span class="string">"foot_ring_sn"</span>].innerHTML = that.handleThreeFoot(item[<span class="string">"foot_ring_sn"</span>]);</span><br><span class="line">              row.cells[<span class="string">"plumage_color"</span>].innerHTML = item[<span class="string">"plumage_color"</span>];</span><br><span class="line">              row.cells[<span class="string">"homing_time"</span>].innerHTML = item[<span class="string">"homing_time"</span>];</span><br><span class="line">              row.cells[<span class="string">"speed"</span>].innerHTML = item[<span class="string">"speed"</span>];</span><br><span class="line"> </span><br><span class="line">             $(row.cells[<span class="string">"member_name"</span>]).parents(<span class="string">"tr"</span>).children(<span class="string">"#member_name"</span>).attr(<span class="string">'title'</span>,item[<span class="string">"member_name"</span>]);</span><br><span class="line">             $(row.cells[<span class="string">"province_city"</span>]).parents(<span class="string">"tr"</span>).children(<span class="string">"#province_city"</span>).attr(<span class="string">'title'</span>,item[<span class="string">"province_city"</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">created</span></span>()&#123;</span><br><span class="line">       //原型函数</span><br><span class="line">      <span class="keyword">function</span> <span class="function"><span class="title">Scrollbar</span></span>() &#123;</span><br><span class="line">        this.options = &#123;</span><br><span class="line">          total: 0, //数据总数</span><br><span class="line">          pos: 0, //当前滚动位置</span><br><span class="line">          itemSize: that.itemHeight, //单项尺寸（表格一行高度）</span><br><span class="line">          size: 200 //控件尺寸（表格高度）</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;</span><br><span class="line">      Scrollbar.prototype = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        // 设置属性</span><br><span class="line">        <span class="keyword">function</span> setOptions(options) &#123;</span><br><span class="line">          <span class="keyword">for</span> (var attr <span class="keyword">in</span> options) &#123;</span><br><span class="line">            this.options[attr] = options[attr];//把option给了this.option</span><br><span class="line">          &#125; Refresh(this); &#125;</span><br><span class="line">        <span class="keyword">function</span> Refresh(_this) &#123;</span><br><span class="line">          <span class="keyword">if</span> (!_this.created) <span class="built_in">return</span>; //设置控件高度</span><br><span class="line">          _this.bar.style.height = _this.options.size + <span class="string">"px"</span>; //设置内容高度</span><br><span class="line">          var ch = _this.options.total * _this.options.itemSize;</span><br><span class="line">          _this.content.style.height = ch + <span class="string">"px"</span>;//数据总数*一条的高度=显示内容的高度</span><br><span class="line">        &#125;</span><br><span class="line">        //获取滚动位置</span><br><span class="line">        <span class="keyword">function</span> <span class="function"><span class="title">getPos</span></span>() &#123;//显示条数</span><br><span class="line">          var top = this.bar.scrollTop+29;</span><br><span class="line">          var pos = parseInt(top / this.options.itemSize);//  滚动高度/一条高度</span><br><span class="line">          <span class="built_in">return</span> pos;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        //每页可展示的数据数量</span><br><span class="line">        <span class="keyword">function</span> <span class="function"><span class="title">getPageItems</span></span>() &#123;</span><br><span class="line">          <span class="built_in">return</span> this.options.size / this.options.itemSize;//（表格高度/显示一行高度=显示条数）</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        //滚动事件响应</span><br><span class="line">        <span class="keyword">function</span> OnScroll(_this) &#123;</span><br><span class="line">          var pos = _this.getPos();//显示条数即滚动位置，滚的时候显示滚到的数据</span><br><span class="line">          <span class="keyword">if</span> (pos == _this.options.pos)</span><br><span class="line">            <span class="built_in">return</span>; _this.options.pos = pos; _this.onScroll(pos);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        //滚动条创建</span><br><span class="line">        <span class="keyword">function</span> CreateAt(dom) &#123;//创建滚动条 宽30px 添加滚动事件</span><br><span class="line">          var _this = this;//把_this给了this</span><br><span class="line">          var bar = document.createElement(<span class="string">"div"</span>);</span><br><span class="line">          $(bar).addClass(<span class="string">"scrollbox"</span>);</span><br><span class="line">          var content = document.createElement(<span class="string">"div"</span>);</span><br><span class="line">          bar.appendChild(content);</span><br><span class="line">          bar.style.width = <span class="string">"30px"</span>;</span><br><span class="line">          bar.style.overflowY = <span class="string">"scroll"</span>;</span><br><span class="line">          bar.style.overflowX = <span class="string">"hidden"</span>;</span><br><span class="line">          <span class="keyword">if</span> (bar.attachEvent) &#123;</span><br><span class="line">            bar.attachEvent(<span class="string">"onscroll"</span>, <span class="function"><span class="title">function</span></span>() &#123; OnScroll(_this); &#125;);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;//firefox兼容</span><br><span class="line">            bar.addEventListener(<span class="string">"scroll"</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">              OnScroll(_this); &#125;, <span class="literal">false</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          content.style.backgroundColor = <span class="string">"white"</span>;//滚动条空白部分是白色</span><br><span class="line">          content.style.width = <span class="string">"1px"</span>;</span><br><span class="line">          this.bar = bar; this.content = content;//把滚动条给了this指针</span><br><span class="line">          <span class="keyword">if</span> (typeof (dom) == <span class="string">"string"</span>) &#123;</span><br><span class="line">            dom = document.getElementById(dom);</span><br><span class="line">          &#125; dom.innerHTML = <span class="string">""</span>;//创建滚动条元素 把滚动装进去</span><br><span class="line">          dom.appendChild(this.bar);</span><br><span class="line">          this.created = <span class="literal">true</span>; Refresh(this);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="built_in">return</span> &#123;</span><br><span class="line">          setOptions: setOptions,</span><br><span class="line">          CreateAt: CreateAt,</span><br><span class="line">          getPos: getPos,</span><br><span class="line">          getPageItems: getPageItems,</span><br><span class="line">          onScroll: null //模拟滚动条事件</span><br><span class="line">        &#125;; &#125;)();</span><br><span class="line">      //新建滚动条</span><br><span class="line">      this.scrbar = new Scrollbar();</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">mounted</span></span>()&#123;</span><br><span class="line">      //创建滚动条</span><br><span class="line">      this.scrbar.CreateAt(<span class="string">"divScroll"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"> </span><br><span class="line">&lt;style lang=<span class="string">"css"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> rel=<span class="string">"stylesheet/css"</span>&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/16/vue路由vue-router/" rel="next" title="vue路由vue-router">
+                <i class="fa fa-chevron-left"></i> vue路由vue-router
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/03/js常用的处理数据的方法/" rel="prev" title="js常用的处理数据的方法">
+                js常用的处理数据的方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">师志花</p>
+              <p class="site-description motion-element" itemprop="description">react-native vue react angular js 前端</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shizhihuaa" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">师志花</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
