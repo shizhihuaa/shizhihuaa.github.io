@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="花花的开发总结">
 <meta property="og:description" content="只能输入数字 1/^[0-9]*$/.test(&quot;123abc&quot;)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-16T01:24:33.559Z">
+<meta property="og:updated_time" content="2019-11-07T07:05:57.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些常用正则的整理">
 <meta name="twitter:description" content="只能输入数字 1/^[0-9]*$/.test(&quot;123abc&quot;)">
@@ -178,7 +178,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">程序媛</p>
+        <p class="site-subtitle">勿以浮沙筑高台</p>
       
   </div>
 
@@ -353,23 +353,35 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^[0-9]*$/.<span class="built_in">test</span>(<span class="string">"123abc"</span>)</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
-<p>将手机号码的中间几位转化成****</p>
+<ul>
+<li>将手机号码的中间几位转化成****</li>
+</ul>
 <p>eg:18404444444    184****4444</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phone.replace(/^(\d&#123;4&#125;)\d&#123;4&#125;(\d+)/,<span class="string">"<span class="variable">$1</span>****<span class="variable">$2</span>"</span>)</span><br></pre></td></tr></table></figure>
 
-<p>金额限制 </p>
+<ul>
+<li>金额限制 </li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/(^[1-9]([0-9]+)$)|(^(0)&#123;1&#125;$)|(^[0-9]$)/.<span class="built_in">test</span>(value) == <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
-<p>输入汉字</p>
+<ul>
+<li>输入汉字</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[\u4E00-\u9FA5\uF900-\uFA2D]/.<span class="built_in">test</span>(value) == <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
-<p>输入正确的日期格式</p>
+<ul>
+<li>输入正确的日期格式</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)$/.<span class="built_in">test</span>(dateval) == <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
-<p>不输入特殊字符 </p>
+<ul>
+<li>不输入特殊字符 </li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^[0-9|\u4e00-\u9fa5|a-z|A-Z]*$/.<span class="built_in">test</span>($(<span class="string">".addRingnum.bob input"</span>).val())== <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
-<p>输入大写字母和数字的结合</p>
+<ul>
+<li>输入大写字母和数字的结合</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[0-9]+[A-Z]+[0-9A-Z]*|[A-Z]+[0-9]+[0-9A-Z]*/.<span class="built_in">test</span>(value) == <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 
@@ -482,7 +494,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -504,7 +516,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

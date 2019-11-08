@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ant design pro,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="项目需要用ant design pro实现一个管理系统，之前没有做过相关项目，所以将自己的学习过程与经验记录下来，做一个总结，也希望对看文章的你有所帮助。（做项目的时候用的是2.0版本，所以本文章基于2.0版本展开）">
+<meta name="keywords" content="ant design pro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ant design pro快速入门">
+<meta property="og:url" content="http://shizhihuaa.github.io/2019/11/07/ant design pro快速入门/index.html">
+<meta property="og:site_name" content="花花的开发总结">
+<meta property="og:description" content="项目需要用ant design pro实现一个管理系统，之前没有做过相关项目，所以将自己的学习过程与经验记录下来，做一个总结，也希望对看文章的你有所帮助。（做项目的时候用的是2.0版本，所以本文章基于2.0版本展开）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/newpage.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/新页面.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/菜单修改.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/菜单中文.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/代理.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/model.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/effects.png">
+<meta property="og:updated_time" content="2019-11-08T06:16:46.185Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ant design pro快速入门">
+<meta name="twitter:description" content="项目需要用ant design pro实现一个管理系统，之前没有做过相关项目，所以将自己的学习过程与经验记录下来，做一个总结，也希望对看文章的你有所帮助。（做项目的时候用的是2.0版本，所以本文章基于2.0版本展开）">
+<meta name="twitter:image" content="http://shizhihuaa.github.io/images/ant%20design%20pro快速入门/newpage.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://shizhihuaa.github.io/2019/11/07/ant design pro快速入门/">
+
+
+
+
+
+  <title>ant design pro快速入门 | 花花的开发总结</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9bdd2d5bd2f082bd61cc47b8221002a4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花花的开发总结</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">勿以浮沙筑高台</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/07/ant design pro快速入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ant design pro快速入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-07T15:13:35+08:00">
+                2019-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ant-design-pro/" itemprop="url" rel="index">
+                    <span itemprop="name">ant design pro</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>项目需要用ant design pro实现一个管理系统，之前没有做过相关项目，所以将自己的学习过程与经验记录下来，做一个总结，也希望对看文章的你有所帮助。（做项目的时候用的是2.0版本，所以本文章基于2.0版本展开）</p>
+<a id="more"></a>
+<h2 id="一、技能点"><a href="#一、技能点" class="headerlink" title="一、技能点"></a>一、技能点</h2><p>ant design pro主要用到的知识列表如下：</p>
+<ul>
+<li><a href="https://ant.design/index-cn" target="_blank" rel="noopener">ant design</a></li>
+<li><a href="https://pro.ant.design/docs/getting-started-cn" target="_blank" rel="noopener">ant design pro</a></li>
+<li><a href="https://dvajs.com/guide/" target="_blank" rel="noopener">dva</a></li>
+<li><a href="https://umijs.org/zh/guide/" target="_blank" rel="noopener">umi</a></li>
+<li><a href="https://github.com/umijs/umi-request/blob/HEAD/README_zh-CN.md" target="_blank" rel="noopener">umi-request</a></li>
+</ul>
+<h2 id="二、克隆项目"><a href="#二、克隆项目" class="headerlink" title="二、克隆项目"></a>二、克隆项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/ant-design/ant-design-pro.git my-project -b v2</span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">npm install </span><br><span class="line">npm start</span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>阅读 <a href="https://pro.ant.design/docs/getting-started-cn" target="_blank" rel="noopener">ant design pro</a> 开始使用了解项目文件目录</p></div>
+
+<h2 id="三、添加新页面"><a href="#三、添加新页面" class="headerlink" title="三、添加新页面"></a>三、添加新页面</h2><h3 id="添加新文件"><a href="#添加新文件" class="headerlink" title="添加新文件"></a>添加新文件</h3><p>src/page 路径下添加页面文件 eg:添加 src/page/New/NewPage.js</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line">class NewPage extends Component &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;div&gt;NewPage&lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default NewPage;</span><br></pre></td></tr></table></figure>
+
+<h3 id="路由配置页面添加新路由"><a href="#路由配置页面添加新路由" class="headerlink" title="路由配置页面添加新路由"></a>路由配置页面添加新路由</h3><p>目录：config/router.config.js</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// newPage</span><br><span class="line">&#123;</span><br><span class="line">  path: <span class="string">'/page'</span>,</span><br><span class="line">  name: <span class="string">'page'</span>,</span><br><span class="line">  icon: <span class="string">'dashboard'</span>,</span><br><span class="line">  component: <span class="string">'./New/NewPage'</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<img src="/images/ant design pro快速入门/newpage.png">
+即可在管理系统中看到该菜单页面
+<img src="/images/ant design pro快速入门/新页面.png">
+菜单名称如果对应修改为中文，修改  `src/locales/zh-CN/menus.js` 文件
+<img src="/images/ant design pro快速入门/菜单修改.png">
+如果项目中需全球化，对应其他语言对应修改
+
+<img src="/images/ant design pro快速入门/菜单中文.png">
+
+<h2 id="四、添加请求"><a href="#四、添加请求" class="headerlink" title="四、添加请求"></a>四、添加请求</h2><h3 id="开发环境添加代理"><a href="#开发环境添加代理" class="headerlink" title="开发环境添加代理"></a>开发环境添加代理</h3><img src="/images/ant design pro快速入门/代理.png">
+
+<div class="note warning"><p>阅读 <a href="https://dvajs.com/guide/" target="_blank" rel="noopener">dva</a> 了解如何实现一个请求</p></div>
+
+<h3 id="src-services-api-添加api"><a href="#src-services-api-添加api" class="headerlink" title="src/services/api 添加api"></a>src/services/api 添加api</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; stringify &#125; from <span class="string">'qs'</span>;</span><br><span class="line">import request from <span class="string">'@/utils/request'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> async <span class="keyword">function</span> getLogInfo(params) &#123;</span><br><span class="line">  <span class="built_in">return</span> request(`/k8s/api/<span class="built_in">log</span>/getLogInfo?<span class="variable">$&#123;stringify(params)&#125;</span>`);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="src-models-form-添加调用方法"><a href="#src-models-form-添加调用方法" class="headerlink" title="src/models/form 添加调用方法"></a>src/models/form 添加调用方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import &#123;</span><br><span class="line">  getLogInfo,</span><br><span class="line">&#125; from <span class="string">'@/services/api'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  namespace: <span class="string">'form'</span>,</span><br><span class="line"></span><br><span class="line">  effects: &#123;</span><br><span class="line">    *getLogInfo(&#123; payload, callback &#125;, &#123; call &#125;) &#123;</span><br><span class="line">      const response = yield call(getLogInfo, payload);</span><br><span class="line">      <span class="keyword">if</span> (callback) callback(response);// 回调函数</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="页面调用请求"><a href="#页面调用请求" class="headerlink" title="页面调用请求"></a>页面调用请求</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; PureComponent &#125; from <span class="string">'react'</span>;</span><br><span class="line">import &#123; connect &#125; from <span class="string">'dva'</span>;</span><br><span class="line"></span><br><span class="line">@connect((&#123; form,loading &#125;) =&gt; (&#123;</span><br><span class="line">  loading: loading.effects[<span class="string">'form/getLogInfo'</span>],</span><br><span class="line">&#125;))</span><br><span class="line">class TableList extends PureComponent &#123;</span><br><span class="line">  getLogData = <span class="built_in">type</span> =&gt; &#123;</span><br><span class="line">    const &#123; dispatch &#125; = this.props;</span><br><span class="line">    const params = &#123;&#125;;</span><br><span class="line">    params.type = <span class="built_in">type</span>;</span><br><span class="line">    dispatch(&#123;</span><br><span class="line">      <span class="built_in">type</span>: <span class="string">'form/getLogInfo'</span>,</span><br><span class="line">      payload: params,</span><br><span class="line">      callback: res =&gt; &#123;</span><br><span class="line">        // 对返回结果做处理</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="知识点摘要"><a href="#知识点摘要" class="headerlink" title="知识点摘要"></a>知识点摘要</h3><ul>
+<li><p>model 分两类，一是全局 model，二是页面 model。全局 model 存于 /src/models/ 目录，所有页面都可引用；页面 model 不能被其他页面所引用。</p>
+<img src="/images/ant design pro快速入门/model.png">
+</li>
+<li><p>Effects是异步，reducers是同步操作（yield生成器）</p>
+<img src="/images/ant design pro快速入门/effects.png">
+</li>
+<li><p>通过 dispatch 函数调用一个 action，从而改变对应的数据。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ant-design-pro/" rel="tag"># ant design pro</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/07/react实现RSA加密解密/" rel="next" title="react实现RSA加密解密、DES加密">
+                <i class="fa fa-chevron-left"></i> react实现RSA加密解密、DES加密
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/08/ant design pro请求报错统一处理/" rel="prev" title="ant design pro请求报错统一处理">
+                ant design pro请求报错统一处理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">师志花</p>
+              <p class="site-description motion-element" itemprop="description">react-native vue react angular js 前端</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shizhihuaa" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、技能点"><span class="nav-number">1.</span> <span class="nav-text">一、技能点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、克隆项目"><span class="nav-number">2.</span> <span class="nav-text">二、克隆项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、添加新页面"><span class="nav-number">3.</span> <span class="nav-text">三、添加新页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新文件"><span class="nav-number">3.1.</span> <span class="nav-text">添加新文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由配置页面添加新路由"><span class="nav-number">3.2.</span> <span class="nav-text">路由配置页面添加新路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、添加请求"><span class="nav-number">4.</span> <span class="nav-text">四、添加请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境添加代理"><span class="nav-number">4.1.</span> <span class="nav-text">开发环境添加代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#src-services-api-添加api"><span class="nav-number">4.2.</span> <span class="nav-text">src/services/api 添加api</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#src-models-form-添加调用方法"><span class="nav-number">4.3.</span> <span class="nav-text">src/models/form 添加调用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面调用请求"><span class="nav-number">4.4.</span> <span class="nav-text">页面调用请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点摘要"><span class="nav-number">4.5.</span> <span class="nav-text">知识点摘要</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">师志花</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
