@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/ant design pro请求报错统一处理/">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/10/数学对象常用的处理数据的方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="师志花">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/08/ant design pro请求报错统一处理/" itemprop="url">ant design pro请求报错统一处理</a></h1>
+                <a class="post-title-link" href="/2019/11/10/数学对象常用的处理数据的方法/" itemprop="url">数学对象常用处理数据的方法</a></h1>
         
 
         <div class="post-meta">
@@ -290,7 +290,779 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T14:13:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-10T15:51:49+08:00">
+                2019-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>项目在需要对数据做处理的时候，经常需要百度一些最简单的数组、字符串方法，很是浪费时间；对这些方法经常回顾、归纳、总结，coding可以省下不少时间，本文章将会对常用处理数据场景及方法做总结，希望对你有所帮助。</p>
+<h3 id="1-场景归纳"><a href="#1-场景归纳" class="headerlink" title="1.场景归纳"></a>1.场景归纳</h3><h3 id="2-方法归纳"><a href="#2-方法归纳" class="headerlink" title="2.方法归纳"></a>2.方法归纳</h3><ul>
+<li><p>abs() 取绝对值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var nub = -3;</span><br><span class="line">console.log(Math.abs(nub)); // 3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>round() 四舍五入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var nub = 1.7;</span><br><span class="line">console.log(Math.round(nub)); // 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ceil() 向上取整</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var nub = 1.01;</span><br><span class="line">console.log(Math.ceil(nub)); // 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>floor() 对数进行向下取整</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var nub = 1.99;</span><br><span class="line">console.log(Math.floor(nub)); // 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>max()  取最大值 max(nub1,nub2,nub3)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.max(1,2,3)); // 3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>min()  取最小值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.min(1,2,3)); // 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>random() 取随机数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.random(0-1)); // 0.14994572367345516 无线接近于0或1，最小0.~~~1 最大0.99~~~</span><br><span class="line">console.log(Math.random(0-1)*28);// 0-28 28倍，向上取整</span><br><span class="line">console.log(Math.random(0-1)*10); //0-10 10倍 四舍五入</span><br><span class="line">console.log(Math.random(0-1)*90+10); //0-10 10倍 四舍五入</span><br><span class="line">console.log(Math.random(0-1)*20)-10; //0-10 10倍 四舍五入</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pow() Math.pow(x,y) 返回x的y次幂平方根</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.pow(2,3)); // 8</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sqrt() 平方根 不可取负值，不可表根号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.sqrt(16)); // 4</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toFixed() 指定小数四舍五入后保留的位数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var aa = 3.1425;</span><br><span class="line">console.log(aa.toFixed(2)); // 3.14 按四舍五入保存</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sin(x) 只写弧度x</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.sin(Math.PI/2)); // 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PI</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Math.PI); // 3.141592653589793</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/10/数组对象常用的处理数据的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/10/数组对象常用的处理数据的方法/" itemprop="url">数组对象常用处理数据的方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-10T15:51:21+08:00">
+                2019-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>项目在需要对数据做处理的时候，经常需要百度一些最简单的数组、字符串方法，很是浪费时间；对这些方法经常回顾、归纳、总结，coding可以省下不少时间，本文章将会对常用处理数据场景及方法做总结，希望对你有所帮助。</p>
+<h3 id="1-场景归纳"><a href="#1-场景归纳" class="headerlink" title="1.场景归纳"></a>1.场景归纳</h3><h3 id="2-方法归纳"><a href="#2-方法归纳" class="headerlink" title="2.方法归纳"></a>2.方法归纳</h3><h4 id="2-1属性"><a href="#2-1属性" class="headerlink" title="2.1属性"></a>2.1属性</h4><p>属性 length 设置或返回数组元素的数目;<br>constructor 返回构造函数的引用</p>
+<h4 id="2-2方法"><a href="#2-2方法" class="headerlink" title="2.2方法"></a>2.2方法</h4><h5 id="删除或添加类"><a href="#删除或添加类" class="headerlink" title="删除或添加类"></a>删除或添加类</h5><ul>
+<li><p>push(数组元素) 向数组末尾添加新的元素，返回新数组长度，可一次添加多个元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var nub = -3;</span><br><span class="line">console.log(Math.abs(nub)); // 3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>unshift 向数组的开头加入新的元素，返回数组新长度，可一次添加多个元素</p>
+</li>
+<li><p>pop() 删除数组的最后一个元素，返回删除的元素</p>
+</li>
+<li><p>shift() 删除数组的第一个元素，返回删除的元素</p>
+</li>
+<li><p>splice() splice(index,数量，添加的元素) 万能的添加删除函数（用于插入、删除或替换数组的元素）<br>index 从何处开始添加或删除，必须是数值类型（数组的下标）<br>数量 规定删除的个数 如果是0，不删除<br>需要添加的元素 可以当做替换的元素<br>如果从arrayObject中删除了元素，则返回的是含有被删除有的元素的数组</p>
+<h5 id="数组的转换"><a href="#数组的转换" class="headerlink" title="数组的转换"></a>数组的转换</h5><ul>
+<li>join(分隔符)  把数组元素按照指定分隔符组合成一个字符串，如果没有指定分隔符，默认是用“,”<h5 id="数组的分割"><a href="#数组的分割" class="headerlink" title="数组的分割"></a>数组的分割</h5></li>
+<li>slice 从截取指定的开始位置到结束位置(不包括)的元素，如果不指定结束位置，则从指定的开始位置取到结尾（数组的下标）；支持负数（-1）开头，返回新数组<h5 id="数组的连接"><a href="#数组的连接" class="headerlink" title="数组的连接"></a>数组的连接</h5></li>
+<li>concat 连接两个或更多的数组，并返回新的数组，但是对原数组没有任何影响 </li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/ant design表单列表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/08/ant design表单列表/" itemprop="url">ant design表单列表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:35:30+08:00">
+                2019-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>项目在需要对数据做处理的时候，经常需要百度一些最简单的数组、字符串方法，很是浪费时间；对这些方法经常回顾、归纳、总结，coding可以省下不少时间，本文章将会对常用处理数据场景及方法做总结，希望对你有所帮助。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="场景归纳"><a href="#场景归纳" class="headerlink" title="场景归纳"></a>场景归纳</h3><ul>
+<li>请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c<br>用到方法归纳第一条，数组转化为字符串<h3 id="方法归纳"><a href="#方法归纳" class="headerlink" title="方法归纳"></a>方法归纳</h3></li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="场景归纳-1"><a href="#场景归纳-1" class="headerlink" title="场景归纳"></a>场景归纳</h3><h3 id="方法归纳-1"><a href="#方法归纳-1" class="headerlink" title="方法归纳"></a>方法归纳</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/不是你想要的数据？考虑是否深拷贝与浅拷贝的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/08/不是你想要的数据？考虑是否深拷贝与浅拷贝的问题/" itemprop="url">不是你想要的数据？考虑是否深拷贝与浅拷贝的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:32:29+08:00">
+                2019-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在项目中当你对数组或对象做了数据处理后，可能你最后获取到的不是你想要的数据，很有可能是因为深拷贝和浅拷贝的问题，这里对这种问题做一个深入分析，以及这种场景的处理方案。</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h2><h3 id="JSON-parse-JSON-stringfy"><a href="#JSON-parse-JSON-stringfy" class="headerlink" title="JSON.parse(JSON.stringfy())"></a>JSON.parse(JSON.stringfy())</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/前端日志显示及下载/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/08/前端日志显示及下载/" itemprop="url">前端日志显示及下载</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:23:23+08:00">
+                2019-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>项目中有一个需求，显示用户使用日志，且提供下载功能;本文对实现方法做一个总结。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="场景归纳"><a href="#场景归纳" class="headerlink" title="场景归纳"></a>场景归纳</h3><ul>
+<li>请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c<br>用到方法归纳第一条，数组转化为字符串<h3 id="方法归纳"><a href="#方法归纳" class="headerlink" title="方法归纳"></a>方法归纳</h3></li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="场景归纳-1"><a href="#场景归纳-1" class="headerlink" title="场景归纳"></a>场景归纳</h3><h3 id="方法归纳-1"><a href="#方法归纳-1" class="headerlink" title="方法归纳"></a>方法归纳</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/eslint检查规则/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/08/eslint检查规则/" itemprop="url">eslint检查规则</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:22:16+08:00">
                 2019-11-08
               </time>
             
@@ -352,9 +1124,8 @@
       
         
           
-            <p>ant design pro项目请求用的是umi-request，对于请求不成功的情况需要给用户错误提示，但是每个请求都对错误情况处理，冗余代码太多，所以在src/utils/request页面拦截请求统一处理</p>
-<h2 id="umi-request"><a href="#umi-request" class="headerlink" title="umi-request"></a>umi-request</h2><p>访问<a href="https://github.com/umijs/umi-request/blob/HEAD/README_zh-CN.md" target="_blank" rel="noopener">umi-request</a>学习具体参数</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">request.interceptors.response.use(async (response, options) =&gt; &#123;</span><br><span class="line">  <span class="built_in">let</span> result;</span><br><span class="line">  const data = await response.clone().json();</span><br><span class="line">  <span class="keyword">if</span> (data.code !== <span class="string">'0'</span>) &#123;</span><br><span class="line">     // 界面报错处理</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result = response;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> result;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+            <p>ant design集成了eslint的检查规则，对于一些基本的平常coding的时候注意一下，养成良好的代码习惯。</p>
+<h2 id="常见规范"><a href="#常见规范" class="headerlink" title="常见规范"></a>常见规范</h2>
           
         
       
@@ -402,7 +1173,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/07/ant design pro快速入门/">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/Linux入门笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="师志花">
@@ -421,7 +1192,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/07/ant design pro快速入门/" itemprop="url">ant design pro快速入门</a></h1>
+                <a class="post-title-link" href="/2019/11/08/Linux入门笔记/" itemprop="url">Linux入门笔记</a></h1>
         
 
         <div class="post-meta">
@@ -433,8 +1204,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-07T15:13:35+08:00">
-                2019-11-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:21:01+08:00">
+                2019-11-08
               </time>
             
 
@@ -456,8 +1227,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ant-design-pro/" itemprop="url" rel="index">
-                    <span itemprop="name">ant design pro</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -494,14 +1265,10 @@
 
       
         
-          <p>项目需要用ant design pro实现一个管理系统，之前没有做过相关项目，所以将自己的学习过程与经验记录下来，做一个总结，也希望对看文章的你有所帮助。（做项目的时候用的是2.0版本，所以本文章基于2.0版本展开）</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/07/ant design pro快速入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>公司服务器一般都是Linux服务器，对于一些问题修改的定位，肯定涉及到一些Linux基本命令，以及一些基本操作，这里对这些基本操作知识点做一个简单的总结。</p>
+
+          
         
       
     </div>
@@ -548,7 +1315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/07/react实现RSA加密解密/">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/k8s创建资源yaml/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="师志花">
@@ -567,7 +1334,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/07/react实现RSA加密解密/" itemprop="url">react实现RSA加密解密、DES加密</a></h1>
+                <a class="post-title-link" href="/2019/11/08/k8s创建资源yaml/" itemprop="url">js常用处理数据的方法</a></h1>
         
 
         <div class="post-meta">
@@ -579,8 +1346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-07T14:14:48+08:00">
-                2019-11-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:20:14+08:00">
+                2019-11-08
               </time>
             
 
@@ -602,8 +1369,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -640,14 +1407,13 @@
 
       
         
-          <p>前端实现RSA加密解密、DES解密，主要用到的包有jsencrypt、crypto-js</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/07/react实现RSA加密解密/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>项目在需要对数据做处理的时候，经常需要百度一些最简单的数组、字符串方法，很是浪费时间；对这些方法经常回顾、归纳、总结，coding可以省下不少时间，本文章将会对常用处理数据场景及方法做总结，希望对你有所帮助。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="场景归纳"><a href="#场景归纳" class="headerlink" title="场景归纳"></a>场景归纳</h3><ul>
+<li>请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c<br>用到方法归纳第一条，数组转化为字符串<h3 id="方法归纳"><a href="#方法归纳" class="headerlink" title="方法归纳"></a>方法归纳</h3></li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="场景归纳-1"><a href="#场景归纳-1" class="headerlink" title="场景归纳"></a>场景归纳</h3><h3 id="方法归纳-1"><a href="#方法归纳-1" class="headerlink" title="方法归纳"></a>方法归纳</h3>
+          
         
       
     </div>
@@ -694,7 +1460,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-navigation2.0使用总结/">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/golang入门笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="师志花">
@@ -713,7 +1479,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/04/react-navigation2.0使用总结/" itemprop="url">vue自定义指令封装拖拽组件</a></h1>
+                <a class="post-title-link" href="/2019/11/08/golang入门笔记/" itemprop="url">golang入门笔记</a></h1>
         
 
         <div class="post-meta">
@@ -725,8 +1491,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T21:57:05+08:00">
-                2019-10-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:19:30+08:00">
+                2019-11-08
               </time>
             
 
@@ -748,8 +1514,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/golang/" itemprop="url" rel="index">
+                    <span itemprop="name">golang</span>
                   </a>
                 </span>
 
@@ -786,14 +1552,10 @@
 
       
         
-          <p>vue自定义指令封装拖拽组件</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-navigation2.0使用总结/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p>曾经用golang写过两个简单的后端程序，这里将自学的学习笔记做一个简单的记录。</p>
+
+          
         
       
     </div>
@@ -840,7 +1602,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-native实现验证码倒计时react-native-smscode-count-down/">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/python入门笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="师志花">
@@ -859,7 +1621,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/10/04/react-native实现验证码倒计时react-native-smscode-count-down/" itemprop="url">react-native实现验证码倒计时react-native-smscode-count-down</a></h1>
+                <a class="post-title-link" href="/2019/11/08/python入门笔记/" itemprop="url">python入门笔记</a></h1>
         
 
         <div class="post-meta">
@@ -871,8 +1633,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T21:55:30+08:00">
-                2019-10-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:19:17+08:00">
+                2019-11-08
               </time>
             
 
@@ -894,8 +1656,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -932,744 +1694,9 @@
 
       
         
-          <p>react-native实现验证码倒计时react-native-smscode-count-down</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-native实现验证码倒计时react-native-smscode-count-down/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-native实现简单的动画/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="师志花">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花花的开发总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/04/react-native实现简单的动画/" itemprop="url">react-native实现简单的动画</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T18:07:08+08:00">
-                2019-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
           
             
           
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>react-native实现简单的动画</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-native实现简单的动画/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-native-picker选择器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="师志花">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花花的开发总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/04/react-native-picker选择器/" itemprop="url">react-native-picker选择器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T18:04:54+08:00">
-                2019-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>react-native-picker选择器</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-native-picker选择器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-native监测网络连接/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="师志花">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花花的开发总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/04/react-native监测网络连接/" itemprop="url">react-native监测网络连接</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T18:03:37+08:00">
-                2019-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>react-native监测网络连接</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-native监测网络连接/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-native-swipeout侧滑编辑删除/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="师志花">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花花的开发总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/04/react-native-swipeout侧滑编辑删除/" itemprop="url">react-native-swipeout侧滑编辑删除</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T18:01:36+08:00">
-                2019-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>react-native-swipeout侧滑编辑删除</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-native-swipeout侧滑编辑删除/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-native实现图表数据可视化native-echarts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="师志花">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花花的开发总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/04/react-native实现图表数据可视化native-echarts/" itemprop="url">react-native实现图表数据可视化native-echarts</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T17:59:02+08:00">
-                2019-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>react-native实现图表数据可视化native-echarts</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-native实现图表数据可视化native-echarts/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1707,7 +1734,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1753,7 +1780,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1764,7 +1791,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1775,7 +1802,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
