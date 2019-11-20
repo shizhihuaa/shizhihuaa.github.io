@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="项目中有一个需求，显示用户使用日志，且提供下载功能;本文对实现方法做一个总结。 数组场景归纳 请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c用到方法归纳第一条，数组转化为字符串方法归纳  字符串场景归纳方法归纳">
+<meta name="description" content="项目中定位问题，需要下载相关日志，具体实现这一需求，做一个总结。 下载方法调用123import downloadFile from &apos;@/utils/downloadMoudle&apos;;downloadFile(`output.json`, JSON.stringify(res.data, null, 4));  下载模块downloadMoudle1234567891011export defau">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端日志显示及下载">
+<meta property="og:title" content="前端文件下载">
 <meta property="og:url" content="http://shizhihuaa.github.io/2019/11/08/前端日志显示及下载/index.html">
 <meta property="og:site_name" content="花花的开发总结">
-<meta property="og:description" content="项目中有一个需求，显示用户使用日志，且提供下载功能;本文对实现方法做一个总结。 数组场景归纳 请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c用到方法归纳第一条，数组转化为字符串方法归纳  字符串场景归纳方法归纳">
+<meta property="og:description" content="项目中定位问题，需要下载相关日志，具体实现这一需求，做一个总结。 下载方法调用123import downloadFile from &apos;@/utils/downloadMoudle&apos;;downloadFile(`output.json`, JSON.stringify(res.data, null, 4));  下载模块downloadMoudle1234567891011export defau">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T12:03:44.925Z">
+<meta property="og:updated_time" content="2019-11-20T02:11:28.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端日志显示及下载">
-<meta name="twitter:description" content="项目中有一个需求，显示用户使用日志，且提供下载功能;本文对实现方法做一个总结。 数组场景归纳 请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c用到方法归纳第一条，数组转化为字符串方法归纳  字符串场景归纳方法归纳">
+<meta name="twitter:title" content="前端文件下载">
+<meta name="twitter:description" content="项目中定位问题，需要下载相关日志，具体实现这一需求，做一个总结。 下载方法调用123import downloadFile from &apos;@/utils/downloadMoudle&apos;;downloadFile(`output.json`, JSON.stringify(res.data, null, 4));  下载模块downloadMoudle1234567891011export defau">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <title>前端日志显示及下载 | 花花的开发总结</title>
+  <title>前端文件下载 | 花花的开发总结</title>
   
 
 
@@ -277,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端日志显示及下载</h1>
+          <h1 class="post-title" itemprop="name headline">前端文件下载</h1>
         
 
         <div class="post-meta">
@@ -349,11 +349,13 @@
       
 
       
-        <p>项目中有一个需求，显示用户使用日志，且提供下载功能;本文对实现方法做一个总结。</p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="场景归纳"><a href="#场景归纳" class="headerlink" title="场景归纳"></a>场景归纳</h3><ul>
-<li>请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c<br>用到方法归纳第一条，数组转化为字符串<h3 id="方法归纳"><a href="#方法归纳" class="headerlink" title="方法归纳"></a>方法归纳</h3></li>
-</ul>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="场景归纳-1"><a href="#场景归纳-1" class="headerlink" title="场景归纳"></a>场景归纳</h3><h3 id="方法归纳-1"><a href="#方法归纳-1" class="headerlink" title="方法归纳"></a>方法归纳</h3>
+        <p>项目中定位问题，需要下载相关日志，具体实现这一需求，做一个总结。</p>
+<h3 id="下载方法调用"><a href="#下载方法调用" class="headerlink" title="下载方法调用"></a>下载方法调用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import downloadFile from <span class="string">'@/utils/downloadMoudle'</span>;</span><br><span class="line"></span><br><span class="line">downloadFile(`output.json`, JSON.stringify(res.data, null, 4));</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载模块downloadMoudle"><a href="#下载模块downloadMoudle" class="headerlink" title="下载模块downloadMoudle"></a>下载模块downloadMoudle</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default (fileName, content) =&gt; &#123;</span><br><span class="line">  // fileName下载文件名  content 下载内容</span><br><span class="line">  const aLink = document.createElement(<span class="string">'a'</span>);</span><br><span class="line">  const blob = new Blob([content]);</span><br><span class="line">  aLink.download = fileName;</span><br><span class="line">  aLink.style.display = <span class="string">'none'</span>;</span><br><span class="line">  aLink.href = URL.createObjectURL(blob);</span><br><span class="line">  document.body.appendChild(aLink);</span><br><span class="line">  aLink.click();</span><br><span class="line">  document.body.removeChild(aLink);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>有时候下载的json文件内容打开只有一行，期望得到的是展开的json格式，可以按下面的方法实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(res.data, null, 4)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -472,7 +474,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -483,7 +485,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -494,7 +496,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -537,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#场景归纳"><span class="nav-number">1.1.</span> <span class="nav-text">场景归纳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法归纳"><span class="nav-number">1.2.</span> <span class="nav-text">方法归纳</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#场景归纳-1"><span class="nav-number">2.1.</span> <span class="nav-text">场景归纳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法归纳-1"><span class="nav-number">2.2.</span> <span class="nav-text">方法归纳</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载方法调用"><span class="nav-number">1.</span> <span class="nav-text">下载方法调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载模块downloadMoudle"><span class="nav-number">2.</span> <span class="nav-text">下载模块downloadMoudle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">3.</span> <span class="nav-text">注意</span></a></li></ol></div>
             
 
           </div>

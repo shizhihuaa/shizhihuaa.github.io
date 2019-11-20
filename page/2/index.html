@@ -259,6 +259,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/python入门笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/08/python入门笔记/" itemprop="url">python入门笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:19:17+08:00">
+                2019-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h3><p>访问<a href="https://www.python.org/" target="_blank" rel="noopener">官网</a>,选择downloads选项，下载exe文件，安装</p>
+<h3 id="安装pycharm"><a href="#安装pycharm" class="headerlink" title="安装pycharm"></a>安装pycharm</h3><p>访问<a href="http://www.jetbrains.com/pycharm/download/#section=windows" target="_blank" rel="noopener">pycharm网站</a>,下载pycharm<br>参考<a href="https://www.runoob.com/w3cnote/pycharm-windows-install.html" target="_blank" rel="noopener">这篇文章</a>来实现安装的具体步骤</p>
+<h3 id="检测是否安装成功"><a href="#检测是否安装成功" class="headerlink" title="检测是否安装成功"></a>检测是否安装成功</h3><p>如果安装成功，命令输入python，显示如下<br><img src="/images/python入门笔记/检测安装.png"></p>
+<h2 id="python基础语法"><a href="#python基础语法" class="headerlink" title="python基础语法"></a>python基础语法</h2><h3 id="变量和字符串"><a href="#变量和字符串" class="headerlink" title="变量和字符串"></a>变量和字符串</h3><ul>
+<li>变量<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 4;</span><br><span class="line">b = 5;</span><br><span class="line">t = a;</span><br><span class="line"><span class="built_in">print</span>(t) ==&gt; 4</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<img src="/images/python入门笔记/变量.png">
+
+<ul>
+<li>字符串加法</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'my name'</span>;</span><br><span class="line">b = <span class="string">' is'</span>;</span><br><span class="line">c = <span class="string">' shizhihua'</span>;</span><br><span class="line"><span class="built_in">print</span>(a+b+c) ==&gt; my name is shizhihua</span><br></pre></td></tr></table></figure>
+
+<img src="/images/python入门笔记/字符串加法.png">
+
+<ul>
+<li>字符串乘法</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'haha'</span>;</span><br><span class="line"><span class="built_in">print</span>(a*3) ==&gt; hahahahahaha</span><br></pre></td></tr></table></figure>
+
+<img src="/images/python入门笔记/字符串乘法.png">
+
+<ul>
+<li>字符串的切片和索引<br>通过string[x],获取字符串的一部分信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'my name is shizhihua'</span>;</span><br><span class="line"><span class="built_in">print</span>(a[0]) ==&gt; m         <span class="comment">#取字符串第一个元素</span></span><br><span class="line"><span class="built_in">print</span>(a[0:5]) ==&gt; my na   <span class="comment">#取字符串第一个到第五个元素</span></span><br><span class="line"><span class="built_in">print</span>(a[-1])  ==&gt; a       <span class="comment">#取字符串最后一个元素</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><ul>
+<li>split() 讲一个字符串分割为一个列表<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'www.baidu.com'</span>;</span><br><span class="line"><span class="built_in">print</span>(a.split(<span class="string">"."</span>)) ==&gt; [<span class="string">'www'</span>,<span class="string">'baidu'</span>,<span class="string">'com'</span>]</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/kibana日志搜索规则及搜索界面显示处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,11 +525,126 @@
       
         
           
-            <p>项目在需要对数据做处理的时候，经常需要百度一些最简单的数组、字符串方法，很是浪费时间；对这些方法经常回顾、归纳、总结，coding可以省下不少时间，本文章将会对常用处理数据场景及方法做总结，希望对你有所帮助。</p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="场景归纳"><a href="#场景归纳" class="headerlink" title="场景归纳"></a>场景归纳</h3><ul>
-<li>请求传参数，需要并列以逗号连接时：数据源[a,b,c],处理为:a,b,c<br>用到方法归纳第一条，数组转化为字符串<h3 id="方法归纳"><a href="#方法归纳" class="headerlink" title="方法归纳"></a>方法归纳</h3></li>
-</ul>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="场景归纳-1"><a href="#场景归纳-1" class="headerlink" title="场景归纳"></a>场景归纳</h3><h3 id="方法归纳-1"><a href="#方法归纳-1" class="headerlink" title="方法归纳"></a>方法归纳</h3>
+            <p>项目调用ES日志检索接口，实现简单的日志界面展示；操作数据，然后通过数据去渲染页面，而不是直接操作DOM</p>
+<h3 id="日志检索语法"><a href="#日志检索语法" class="headerlink" title="日志检索语法"></a>日志检索语法</h3><p>简单的对基本的语法做一个总结</p>
+<h4 id="1-语法关键字"><a href="#1-语法关键字" class="headerlink" title="1.语法关键字"></a>1.语法关键字</h4><p>+ - &amp;&amp; || ! ( ) { } [ ] ^ “ ~ * ? : /<br>如果所要查询的查询词中本身包含关键字，则需要用\进行转义（注意是本身！） </p>
+<h5 id="例1：rvm-5100-kibana-kibana-6-7-0"><a href="#例1：rvm-5100-kibana-kibana-6-7-0" class="headerlink" title="例1：rvm:5100/kibana/kibana:6.7.0"></a>例1：rvm:5100/kibana/kibana:6.7.0</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/语法关键字例1.png">
+
+<h5 id="例2：-MessageBroker-1"><a href="#例2：-MessageBroker-1" class="headerlink" title="例2：[MessageBroker-1]"></a>例2：[MessageBroker-1]</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/语法关键字例2.png">
+
+<h4 id="2-查询词-Term"><a href="#2-查询词-Term" class="headerlink" title="2.查询词(Term)"></a>2.查询词(Term)</h4><p>支持两种查询词，一种是单一查询词，如”hello”，一种是词组(phrase)，如”hello world”。</p>
+<h5 id="例1：Unexpected"><a href="#例1：Unexpected" class="headerlink" title="例1：Unexpected"></a>例1：Unexpected</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/2-1.png">
+
+<h5 id="例2：”not-get-“"><a href="#例2：”not-get-“" class="headerlink" title="例2：”not get “"></a>例2：”not get “</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/2-2.png">
+
+<h4 id="3-查询域-Field"><a href="#3-查询域-Field" class="headerlink" title="3. 查询域(Field)"></a>3. 查询域(Field)</h4><p>在查询语句中，可以指定从哪个域中寻找查询词，如果不指定，则从默认域中查找。<br>查询域和查询词之间用:分隔，如title:”Do it right”。<br>:仅对紧跟其后的查询词起作用，如果title:Do it right，则仅表示在title中查询Do，而it right要在默认域中查询。</p>
+<h5 id="例1：stream-”stdout”"><a href="#例1：stream-”stdout”" class="headerlink" title="例1：stream:”stdout”"></a>例1：stream:”stdout”</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/3-1.png">
+
+<h5 id="例2：只搜“1”，可以搜到log和message两个字段都有1，搜-log-“1”，只可以搜到log字段的1"><a href="#例2：只搜“1”，可以搜到log和message两个字段都有1，搜-log-“1”，只可以搜到log字段的1" class="headerlink" title="例2：只搜“1”，可以搜到log和message两个字段都有1，搜 log:“1”，只可以搜到log字段的1"></a>例2：只搜“1”，可以搜到log和message两个字段都有1，搜 log:“1”，只可以搜到log字段的1</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/3-2.png">
+
+<h4 id="4-通配符查询-Wildcard"><a href="#4-通配符查询-Wildcard" class="headerlink" title="4.通配符查询(Wildcard)"></a>4.通配符查询(Wildcard)</h4><p>支持两种通配符：?表示一个字符，*表示多个字符。<br>通配符可以出现在查询词的中间或者末尾，如te?t，test*，te*t，但决不能出现在开始，如*test，?test。</p>
+<h5 id="例1：k8s"><a href="#例1：k8s" class="headerlink" title="例1：k8s-?"></a>例1：k8s-?</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/4-1.png">
+
+<h5 id="例2-k8s"><a href="#例2-k8s" class="headerlink" title="例2: k8s-*"></a>例2: k8s-*</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/4-2.png"> 
+
+<h5 id="例3：kube-syst-m"><a href="#例3：kube-syst-m" class="headerlink" title="例3：kube-syst*m"></a>例3：kube-syst*m</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/4-3.png">
+
+<h4 id="5-模糊查询-Fuzzy"><a href="#5-模糊查询-Fuzzy" class="headerlink" title="5.模糊查询(Fuzzy)"></a>5.模糊查询(Fuzzy)</h4><p>模糊查询的算法是基于Levenshtein Distance，也即当两个词的差别小于某个比例的时候，就算匹配，如roam~0.8，即表示差别小于0.2，相似度大于0.8才算匹配。</p>
+<h5 id="例1：fetc"><a href="#例1：fetc" class="headerlink" title="例1：fetc~"></a>例1：fetc~</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/5-1.png">
+
+<h5 id="例2：con"><a href="#例2：con" class="headerlink" title="例2：con~"></a>例2：con~</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/5-2.png">
+
+
+<h4 id="6-临近查询-Proximity"><a href="#6-临近查询-Proximity" class="headerlink" title="6.临近查询(Proximity)"></a>6.临近查询(Proximity)</h4><p>在词组后面跟随~10，表示词组中的多个词之间的距离之和不超过10，则满足查询。<br>所谓词之间的距离，即查询词组中词为满足和目标词组相同的最小移动次数。<br>如索引中有词组”apple boy cat”。<br>如果查询词为”apple boy cat”~0，则匹配。<br>如果查询词为”boy apple cat”~2，距离设为2方能匹配，设为1则不能匹配。</p>
+<table>
+<thead>
+<tr>
+<th>步数</th>
+<th align="left">1</th>
+<th align="center">2</th>
+<th align="right">3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(0)</td>
+<td align="left">boy</td>
+<td align="center">apple</td>
+<td align="right">cat</td>
+</tr>
+<tr>
+<td>(1)</td>
+<td align="left"></td>
+<td align="center">boy cat</td>
+<td align="right">apple</td>
+</tr>
+<tr>
+<td>(2)</td>
+<td align="left">apple</td>
+<td align="center">boy</td>
+<td align="right">cat</td>
+</tr>
+</tbody></table>
+<p>如果查询词为”cat boy apple”~4，距离设为4方能匹配。</p>
+<table>
+<thead>
+<tr>
+<th>步数</th>
+<th align="left">1</th>
+<th align="center">2</th>
+<th align="right">3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(0)</td>
+<td align="left">cat</td>
+<td align="center">boy</td>
+<td align="right">apple</td>
+</tr>
+<tr>
+<td>(1)</td>
+<td align="left"></td>
+<td align="center">cat boy</td>
+<td align="right">apple</td>
+</tr>
+<tr>
+<td>(2)</td>
+<td align="left"></td>
+<td align="center">boy</td>
+<td align="right">cat apple</td>
+</tr>
+<tr>
+<td>(3)</td>
+<td align="left"></td>
+<td align="center">boy apple</td>
+<td align="right">cat</td>
+</tr>
+<tr>
+<td>(4)</td>
+<td align="left">apple</td>
+<td align="center">boy</td>
+<td align="right">cat</td>
+</tr>
+</tbody></table>
+<h5 id="例1：”not-get-user”-0"><a href="#例1：”not-get-user”-0" class="headerlink" title="例1：”not get user”~0"></a>例1：”not get user”~0</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/6-1.png">
+
+<h5 id="例2：”get-not-user”-3"><a href="#例2：”get-not-user”-3" class="headerlink" title="例2：”get not user”~3"></a>例2：”get not user”~3</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/6-2.png">
+
+<h4 id="7-区间查询-Range"><a href="#7-区间查询-Range" class="headerlink" title="7.区间查询(Range)"></a>7.区间查询(Range)</h4><p>区间查询包含两种，一种是包含边界，用[A TO B]指定，一种是不包含边界，用{A TO B}指定。<br>如date:[20020101 TO 20030101]，当然区间查询不仅仅用于时间，如title:{Aida TO Carmen}</p>
+<h5 id="例1：hostname-k8s-1-TO-k8s-5"><a href="#例1：hostname-k8s-1-TO-k8s-5" class="headerlink" title="例1：hostname:{k8s-1 TO k8s-5}"></a>例1：hostname:{k8s-1 TO k8s-5}</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/7-1.png">
+
+<h4 id="8-增加一个查询词的权重-Boost"><a href="#8-增加一个查询词的权重-Boost" class="headerlink" title="8.增加一个查询词的权重(Boost)"></a>8.增加一个查询词的权重(Boost)</h4><p>可以在查询词后面加^N来设定此查询词的权重，默认是1，如果N大于1，则说明此查询词更重要，如果N小于1，则说明此查询词更不重要。<br>如jakarta^4 apache，”jakarta apache”^4 “Apache Lucene”</p>
+<h5 id="例1：network-4-error"><a href="#例1：network-4-error" class="headerlink" title="例1：network^4 error"></a>例1：network^4 error</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/8-1.png">
+
+<h4 id="9-布尔操作符"><a href="#9-布尔操作符" class="headerlink" title="9.布尔操作符"></a>9.布尔操作符</h4><p>布尔操作符包括连接符，如AND，OR，和修饰符，如NOT，+，-。<br>默认状态下，空格被认为是OR的关系，QueryParser.setDefaultOperator(Operator.AND)设置为空格为AND。<br>+表示一个查询语句是必须满足的(required)，NOT和-表示一个查询语句是不能满足的(prohibited)。</p>
+<h5 id="例1：network-AND-error"><a href="#例1：network-AND-error" class="headerlink" title="例1：network AND error"></a>例1：network AND error</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/9-1.png">
+
+<h5 id="例2-network-OR-error"><a href="#例2-network-OR-error" class="headerlink" title="例2: network OR error"></a>例2: network OR error</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/9-2.png">
+
+<h4 id="10-组合"><a href="#10-组合" class="headerlink" title="10.组合"></a>10.组合</h4><p>可以用括号，将查询语句进行组合，从而设定优先级。<br>如(jakarta OR apache) AND website</p>
+<h5 id="例1：network-AND-error-OR-success"><a href="#例1：network-AND-error-OR-success" class="headerlink" title="例1：network AND (error OR success)"></a>例1：network AND (error OR success)</h5><img src="/images/kibana日志搜索规则及搜索界面显示处理/10-1.png">
+
+<h3 id="前端高亮显示kibana搜索结果"><a href="#前端高亮显示kibana搜索结果" class="headerlink" title="前端高亮显示kibana搜索结果"></a>前端高亮显示kibana搜索结果</h3><p>那界面如何实现key值标蓝显示，搜索结果标黄显示呢？<br>ES接口可以返回哪些是搜索结果，对应在文本中替换即可。<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; PureComponent, Fragment &#125; from <span class="string">'react'</span>;</span><br><span class="line">import &#123; connect &#125; from <span class="string">'dva'</span>;</span><br><span class="line">import &#123; formatMessage &#125; from <span class="string">'umi-plugin-react/locale'</span>;</span><br><span class="line">import &#123; Card, Button, DatePicker, Modal, notification &#125; from <span class="string">'antd'</span>;</span><br><span class="line">import RefreshTable from <span class="string">'@/components/RefreshTable'</span>;</span><br><span class="line">import PageHeaderWrapper from <span class="string">'@/components/PageHeaderWrapper'</span>;</span><br><span class="line">import styles from <span class="string">'./Log.less'</span>;</span><br><span class="line">import AceEditor from <span class="string">'react-ace'</span>;</span><br><span class="line">import jQuery from <span class="string">'jquery'</span>;</span><br><span class="line">import brace from <span class="string">'brace'</span>;</span><br><span class="line">import <span class="string">'brace/mode/json'</span>;</span><br><span class="line">import <span class="string">'brace/mode/yaml'</span>;</span><br><span class="line">import <span class="string">'brace/theme/github'</span>;</span><br><span class="line">const $ = jQuery;</span><br><span class="line"></span><br><span class="line">const &#123; RangePicker &#125; = DatePicker;</span><br><span class="line"></span><br><span class="line">@connect((&#123; <span class="built_in">log</span>, loading &#125;) =&gt; (&#123;</span><br><span class="line">  <span class="built_in">log</span>,</span><br><span class="line">  loading: loading.models.log,</span><br><span class="line">&#125;))</span><br><span class="line">class Log extends PureComponent &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    pageSize: 50,</span><br><span class="line">    pageNo: 1,</span><br><span class="line">    filterParam: <span class="string">''</span>,</span><br><span class="line">    sortBy: <span class="string">''</span>,</span><br><span class="line">    sortFlag: <span class="string">'desc'</span>,</span><br><span class="line">    startTime: null,</span><br><span class="line">    endTime: null,</span><br><span class="line">    initFlag: <span class="literal">true</span>,</span><br><span class="line">    logAll: [],</span><br><span class="line">    renderStartFlag: <span class="literal">true</span>,</span><br><span class="line">    renderParam: <span class="string">''</span>,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  lastlog = [];</span><br><span class="line"></span><br><span class="line">  columns = [</span><br><span class="line">    &#123;</span><br><span class="line">      title: <span class="string">'日志内容'</span>,</span><br><span class="line">      dataIndex: <span class="string">'_source'</span>,</span><br><span class="line">      disabled: <span class="literal">true</span>,</span><br><span class="line">      key: <span class="string">'_source'</span>,</span><br><span class="line">      render: (text, record, index) =&gt; (</span><br><span class="line">        // 日志显示内容很多，且页面渲染，所以根据高度折叠；点击+查看更多</span><br><span class="line">        &lt;div</span><br><span class="line">          style=&#123;&#123;</span><br><span class="line">            height: $(<span class="string">'.antd-pro-pages-log-log-logColor'</span>).height() * 3 + Number(12),</span><br><span class="line">            overflow: <span class="string">'hidden'</span>,</span><br><span class="line">          &#125;&#125;</span><br><span class="line">        &gt;</span><br><span class="line">          &#123;record._source &amp;&amp;</span><br><span class="line">            this.getLogArr(record._source, index, record.highlight) &amp;&amp;</span><br><span class="line">            this.getLogArr(record._source, index, record.highlight).length !== 0 &amp;&amp;</span><br><span class="line">            this.getLogArr(record._source, index, record.highlight).map(item =&gt; (</span><br><span class="line">              &lt;Fragment&gt;</span><br><span class="line">                &#123;/* 每个key值标蓝 logColor是蓝色样式 */&#125;</span><br><span class="line">                &lt;span className=&#123;styles.logColor&#125;&gt;&#123;Object.keys(item)[0]&#125;&lt;/span&gt;</span><br><span class="line">                &#123;/* 因为value值会对搜索结果标黄，span包裹搜索结果，所以需渲染html */&#125;</span><br><span class="line">                &lt;span</span><br><span class="line">                  className=&#123;styles.logText&#125;</span><br><span class="line">                  dangerouslySetInnerHTML=&#123;&#123; __html: Object.values(item)[0] &#125;&#125;</span><br><span class="line">                &gt;&lt;/span&gt;</span><br><span class="line">              &lt;/Fragment&gt;</span><br><span class="line">            ))&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      ),</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      title: <span class="string">'创建时间'</span>,</span><br><span class="line">      dataIndex: <span class="string">'time'</span>,</span><br><span class="line">      sorter: <span class="literal">true</span>,</span><br><span class="line">      width: 155,</span><br><span class="line">      key: <span class="string">'time'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  ];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">componentDidMount</span></span>() &#123;</span><br><span class="line">    // 一开始获取日志数据</span><br><span class="line">    this.getServiceList();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getServiceList = value =&gt; &#123;</span><br><span class="line">    const &#123; dispatch &#125; = this.props;</span><br><span class="line">    <span class="built_in">let</span> params = &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span> (!value) &#123;</span><br><span class="line">      const &#123; pageSize, pageNo, filterParam, sortBy, sortFlag &#125; = this.state;</span><br><span class="line">      params = &#123;</span><br><span class="line">        pageSize,</span><br><span class="line">        pageNo,</span><br><span class="line">        keyword: filterParam.trim(),</span><br><span class="line">        sortBy,</span><br><span class="line">        sortFlag,</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      params = value;</span><br><span class="line">    &#125;</span><br><span class="line">    delete params.sortBy;</span><br><span class="line"></span><br><span class="line">    dispatch(&#123;</span><br><span class="line">      <span class="built_in">type</span>: <span class="string">'log/fetch'</span>,</span><br><span class="line">      payload: params,</span><br><span class="line">      callback: res =&gt; &#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">          renderStartFlag: <span class="literal">true</span>,</span><br><span class="line">          startLogTime: res.data.startTime,</span><br><span class="line">          endLogTime: res.data.endTime,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  getLogArr = (logData, index, highlight) =&gt; &#123;</span><br><span class="line">    // highlight每一行数据标黄部分</span><br><span class="line">    const &#123; renderParam, initFlag, renderStartFlag &#125; = this.state;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!initFlag &amp;&amp; !renderStartFlag) &#123;</span><br><span class="line">      <span class="built_in">let</span> resultArr = [];</span><br><span class="line">      resultArr = this.lastlog[index];</span><br><span class="line">      <span class="built_in">return</span> resultArr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">let</span> logArr = [];</span><br><span class="line">    <span class="keyword">if</span> (logData &amp;&amp; Object.keys(logData).length !== 0) &#123;</span><br><span class="line">      Object.keys(logData).forEach(item =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (typeof logData[item] !== <span class="string">'object'</span>) &#123;</span><br><span class="line">          // 如果不是对象，直接显示</span><br><span class="line">          <span class="built_in">let</span> logObj = &#123;&#125;;</span><br><span class="line">          logObj[item] = logData[item];</span><br><span class="line">          logArr.push(logObj);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          // 还是对象，继续循环</span><br><span class="line">          Object.keys(logData[item]).forEach(citem =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (typeof logData[item][citem] !== <span class="string">'object'</span>) &#123;</span><br><span class="line">              <span class="built_in">let</span> logObj = &#123;&#125;;</span><br><span class="line">              logObj[`<span class="variable">$&#123;item&#125;</span>.<span class="variable">$&#123;citem&#125;</span>`] = logData[item][citem];</span><br><span class="line">              logArr.push(logObj);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              Object.keys(logData[item][citem]).forEach(sitem =&gt; &#123;</span><br><span class="line">                <span class="built_in">let</span> logObj = &#123;&#125;;</span><br><span class="line">                logObj[`<span class="variable">$&#123;item&#125;</span>.<span class="variable">$&#123;citem&#125;</span>.<span class="variable">$&#123;sitem&#125;</span>`] =</span><br><span class="line">                  typeof logData[item][citem][sitem] === <span class="string">'string'</span></span><br><span class="line">                    ? logData[item][citem][sitem]</span><br><span class="line">                    : JSON.stringify(logData[item][citem][sitem]);</span><br><span class="line">                logArr.push(logObj);</span><br><span class="line">              &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">let</span> resultArr = [];</span><br><span class="line">    <span class="built_in">let</span> beforeArr = [];</span><br><span class="line">    <span class="built_in">let</span> afterArr = [];</span><br><span class="line">    <span class="keyword">if</span> (renderParam !== <span class="string">''</span> &amp;&amp; renderStartFlag &amp;&amp; highlight) &#123;</span><br><span class="line">      logArr.forEach(item =&gt; &#123;</span><br><span class="line">        Object.keys(highlight).forEach(jitem =&gt; &#123;</span><br><span class="line">          <span class="keyword">if</span> (jitem === Object.keys(item)[0]) &#123;</span><br><span class="line">            <span class="built_in">let</span> itemValue = highlight[jitem][0];</span><br><span class="line">            itemValue = itemValue.replace(/&lt;/g, `&amp;lt;`);</span><br><span class="line">            itemValue = itemValue.replace(/&gt;/g, `&amp;gt;`);</span><br><span class="line">            // 返回结果需高亮标黄的搜索结果；且把包含搜索结果的键值对提前</span><br><span class="line">            itemValue = itemValue.replace(</span><br><span class="line">              /@kibana-highlighted-field@/g,</span><br><span class="line">              `&lt;span class=<span class="string">'logYellow'</span>&gt;`</span><br><span class="line">            );</span><br><span class="line">            itemValue = itemValue.replace(/@\/kibana-highlighted-field@/g, `&lt;/span&gt;`);</span><br><span class="line"></span><br><span class="line">            item[Object.keys(item)[0]] = itemValue;</span><br><span class="line">            beforeArr.push(item);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            afterArr.push(item);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">      resultArr = beforeArr.concat(afterArr);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      resultArr = logArr;</span><br><span class="line">    &#125;</span><br><span class="line">    this.lastlog[index] = resultArr;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> resultArr;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    const &#123;</span><br><span class="line">      <span class="built_in">log</span>: &#123; data &#125;,</span><br><span class="line">      loading,</span><br><span class="line">      route,</span><br><span class="line">    &#125; = this.props;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;PageHeaderWrapper content=&#123;`<span class="variable">$&#123;formatMessage(&#123; id: `logCaption` &#125;</span>)&#125;`&#125;&gt;</span><br><span class="line">        &lt;Card bordered=&#123;<span class="literal">false</span>&#125;&gt;</span><br><span class="line">          &lt;RefreshTable</span><br><span class="line">            data=&#123;data &amp;&amp; data.data ? data.data : &#123;&#125;&#125;</span><br><span class="line">            rowKey=&#123;record =&gt;</span><br><span class="line">              `<span class="variable">$&#123;record.id&#125;</span>/<span class="variable">$&#123;record._source['@timestamp']&#125;</span>/$&#123;record._source[<span class="string">'docker'</span>] &amp;&amp;</span><br><span class="line">                record._source[<span class="string">'docker'</span>][<span class="string">'container_id'</span>]&#125;/<span class="variable">$&#123;record._source['_BOOT_ID']&#125;</span>`</span><br><span class="line">            &#125;</span><br><span class="line">            columns=&#123;this.columns&#125;</span><br><span class="line">            locale=&#123;locle&#125;</span><br><span class="line">            expandedRowRender=&#123;record =&gt; (</span><br><span class="line">              &lt;AceEditor</span><br><span class="line">                width=<span class="string">"100%"</span></span><br><span class="line">                mode=<span class="string">"json"</span></span><br><span class="line">                key=&#123;record._source[<span class="string">'@timestamp'</span>]&#125;</span><br><span class="line">                height=<span class="string">"300px"</span></span><br><span class="line">                value=&#123;record._source ? JSON.stringify(record._source, null, 4) : <span class="string">''</span>&#125;</span><br><span class="line">                theme=<span class="string">"github"</span></span><br><span class="line">                name=<span class="string">"UNIQUE_ID_OF_DIV"</span></span><br><span class="line">                editorProps=&#123;&#123; <span class="variable">$blockScrolling</span>: <span class="literal">true</span> &#125;&#125;</span><br><span class="line">              /&gt;</span><br><span class="line">            )&#125;</span><br><span class="line">          &gt;</span><br><span class="line">          &lt;/RefreshTable&gt;</span><br><span class="line">        &lt;/Card&gt;</span><br><span class="line">      &lt;/PageHeaderWrapper&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default Log;</span><br></pre></td></tr></table></figure></p>
+
           
         
       
@@ -497,9 +785,35 @@
       
         
           
-            <p>iframe引入garafana界面，部分可编辑操作不对外暴露，需要自定义样式，但是garafana引入属于跨域引入，不可以直接获取garafana界面元素，本文章对具体实现做一总结。</p>
-<h3 id="iframe引入garafana"><a href="#iframe引入garafana" class="headerlink" title="iframe引入garafana"></a>iframe引入garafana</h3><h3 id="garafana源码修改样式"><a href="#garafana源码修改样式" class="headerlink" title="garafana源码修改样式"></a>garafana源码修改样式</h3><h3 id="界面引入与未引入区分"><a href="#界面引入与未引入区分" class="headerlink" title="界面引入与未引入区分"></a>界面引入与未引入区分</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; PureComponent &#125; from <span class="string">'react'</span>;</span><br><span class="line">import &#123; connect &#125; from <span class="string">'dva'</span>;</span><br><span class="line">import &#123; formatMessage &#125; from <span class="string">'umi-plugin-react/locale'</span>;</span><br><span class="line">import &#123; TreeSelect, Card, Row, Spin &#125; from <span class="string">'antd'</span>;</span><br><span class="line"></span><br><span class="line">import PageHeaderWrapper from <span class="string">'@/components/PageHeaderWrapper'</span>;</span><br><span class="line">import jQuery from <span class="string">'jquery'</span>;</span><br><span class="line">import &#123; stringify &#125; from <span class="string">'qs'</span>;</span><br><span class="line">import styles from <span class="string">'./Monitoring.less'</span>;</span><br><span class="line"></span><br><span class="line">const $ = jQuery;</span><br><span class="line"></span><br><span class="line">@connect((&#123; monitor, loading &#125;) =&gt; (&#123;</span><br><span class="line">  monitor,</span><br><span class="line">  loading: loading.models.monitor,</span><br><span class="line">&#125;))</span><br><span class="line">class Monitoring extends PureComponent &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    value: <span class="string">'/d/XMs72Lbc3/rong-qi-ping-tai-ji-qun-jian-kong-gao-jing'</span>, // 默认值 不能为空 监控页面有修改，需对应修改</span><br><span class="line">    treedata: [],</span><br><span class="line">    iframeUrl: <span class="string">'/d/XMs72Lbc3/rong-qi-ping-tai-ji-qun-jian-kong-gao-jing?orgId=1&amp;refresh=30m'</span>, // 默认值 不能为空</span><br><span class="line">    iframePrefix: <span class="string">''</span>,</span><br><span class="line">    iframeLoading: <span class="literal">true</span>,</span><br><span class="line">    iframeHeight: 600,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">componentDidMount</span></span>() &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      iframeHeight: $(<span class="string">'body'</span>).height() - 280,</span><br><span class="line">    &#125;);</span><br><span class="line">    this.messageFlag = <span class="literal">true</span>;</span><br><span class="line">    const &#123; dispatch &#125; = this.props;</span><br><span class="line">    const &#123; value &#125; = this.state;</span><br><span class="line">    dispatch(&#123;</span><br><span class="line">      <span class="built_in">type</span>: <span class="string">'monitor/fetchTree'</span>,</span><br><span class="line">      callback: res =&gt; &#123;</span><br><span class="line">        const data = res.data.result;</span><br><span class="line">        data.forEach(item =&gt; &#123;</span><br><span class="line">          item.key = item.id;</span><br><span class="line">          item.value = item.url;</span><br><span class="line">          item.disabled = <span class="literal">false</span>;</span><br><span class="line">          <span class="keyword">if</span> (item.children) &#123;</span><br><span class="line">            item.disabled = <span class="literal">true</span>;</span><br><span class="line">            item.children.forEach(childrenItem =&gt; &#123;</span><br><span class="line">              childrenItem.key = childrenItem.id;</span><br><span class="line">              childrenItem.value = childrenItem.url;</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">          treedata: data,</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    dispatch(&#123;</span><br><span class="line">      <span class="built_in">type</span>: <span class="string">'monitor/fetchUrl'</span>,</span><br><span class="line">      payload: &#123; url: value &#125;,</span><br><span class="line">      callback: res =&gt; &#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">          // iframePrefix: res.data.result,</span><br><span class="line">          iframePrefix: <span class="string">"http://localhost:3000"</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">    window.addEventListener(<span class="string">'message'</span>, this.messageEvent);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">componentWillUnmount</span></span>() &#123;</span><br><span class="line">    window.removeEventListener(<span class="string">'message'</span>, this.messageEvent);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  messageEvent = event =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (event.data === <span class="string">'loadSuccess'</span>) &#123;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        iframeLoading: <span class="literal">false</span>,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  getPageUrl = (params, url) =&gt; &#123;</span><br><span class="line">    <span class="built_in">let</span> &#123; value &#125; = this.state;</span><br><span class="line">    const urlParams = &#123;</span><br><span class="line">      orgId: 1,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (url) &#123;</span><br><span class="line">      value = url;</span><br><span class="line">    &#125;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      iframeUrl: `<span class="variable">$&#123;value&#125;</span>?<span class="variable">$&#123;stringify(urlParams)&#125;</span>`,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  onChange = value =&gt; &#123;</span><br><span class="line">    const &#123; iframeLoading &#125; = this.state;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      value,</span><br><span class="line">      iframeLoading: <span class="literal">true</span>,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    this.getPageUrl(&#123;&#125;, value);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    const &#123; value, treedata, iframeUrl, iframePrefix, iframeLoading, iframeHeight &#125; = this.state;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;PageHeaderWrapper content=&#123;`<span class="variable">$&#123;formatMessage(&#123; id: `monitoringCaption` &#125;</span>)&#125;`&#125;&gt;</span><br><span class="line">        &lt;Card bordered=&#123;<span class="literal">false</span>&#125;&gt;</span><br><span class="line">          &lt;Row&gt;</span><br><span class="line">            &lt;TreeSelect</span><br><span class="line">              style=&#123;&#123; width: 397 &#125;&#125;</span><br><span class="line">              value=&#123;value&#125;</span><br><span class="line">              dropdownStyle=&#123;&#123; maxHeight: 400, overflow: <span class="string">'auto'</span> &#125;&#125;</span><br><span class="line">              treeData=&#123;treedata&#125;</span><br><span class="line">              placeholder=<span class="string">"请选择显示界面"</span></span><br><span class="line">              treeDefaultExpandAll</span><br><span class="line">              onChange=&#123;this.onChange&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">          &lt;/Row&gt;</span><br><span class="line">          &lt;div className=&#123;styles.iframeContain&#125;&gt;</span><br><span class="line">            &lt;Spin tip=<span class="string">"Loading..."</span> spinning=&#123;iframeLoading&#125;&gt;</span><br><span class="line">              &lt;iframe</span><br><span class="line">                id=<span class="string">"monitorBox"</span></span><br><span class="line">                className=<span class="string">"monitorBox"</span></span><br><span class="line">                title=<span class="string">"monitor"</span></span><br><span class="line">                src=&#123;`<span class="variable">$&#123;iframePrefix&#125;</span><span class="variable">$&#123;iframeUrl&#125;</span>&amp;monitorFlag=<span class="literal">true</span>`&#125;</span><br><span class="line">                width=<span class="string">"100%"</span></span><br><span class="line">                height=&#123;iframeHeight&#125;</span><br><span class="line">                frameBorder=<span class="string">"0"</span></span><br><span class="line">              /&gt;</span><br><span class="line">            &lt;/Spin&gt;</span><br><span class="line">            &#123;iframeLoading &amp;&amp; &lt;div className=&#123;styles.loadingMock&#125;&gt;&lt;/div&gt;&#125;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/Card&gt;</span><br><span class="line">      &lt;/PageHeaderWrapper&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default Monitoring;</span><br></pre></td></tr></table></figure>
+            <p>iframe引入garafana界面，部分可编辑操作不对外暴露，需要自定义样式，隐藏菜单和顶部编辑栏；但是garafana引入属于跨域引入，不可以直接获取garafana界面元素，本文章对具体实现做一总结。<br>在项目中很深的两个个感受：</p>
+<ul>
+<li>如果有很多需要修改样式的元素，不要去用js等加载完毕之后去操作元素，直接给其父元素添加一个类名，通过css后代选择器控制样式来实现</li>
+<li>关于iframe引入的界面，作为iframe引入的需要修改元素样式，而界面本身不需要修改样式；但是界面跨域不能获取元素，所以通过在地址栏添加参数来区分是否需要对样式做修改；但是如果只通过iframe访问，这个就不需要考虑这个问题了<h3 id="1-iframe引入garafana"><a href="#1-iframe引入garafana" class="headerlink" title="1.iframe引入garafana"></a>1.iframe引入garafana</h3>iframe的src地址为garafana地址，添加参数&amp;monitorFlag=true让用户区分引入与未引入<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; PureComponent &#125; from <span class="string">'react'</span>;</span><br><span class="line">import &#123; connect &#125; from <span class="string">'dva'</span>;</span><br><span class="line">import &#123; TreeSelect, Card, Row, Spin &#125; from <span class="string">'antd'</span>;</span><br><span class="line"></span><br><span class="line">import PageHeaderWrapper from <span class="string">'@/components/PageHeaderWrapper'</span>;</span><br><span class="line">import jQuery from <span class="string">'jquery'</span>;</span><br><span class="line"></span><br><span class="line">import styles from <span class="string">'./Monitoring.less'</span>;</span><br><span class="line"></span><br><span class="line">const $ = jQuery;</span><br><span class="line"></span><br><span class="line">@connect((&#123; monitor, loading &#125;) =&gt; (&#123;</span><br><span class="line">  monitor,</span><br><span class="line">  loading: loading.models.monitor,</span><br><span class="line">&#125;))</span><br><span class="line">class Monitoring extends PureComponent &#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    value: <span class="string">''</span>, // 默认值 不能为空 监控页面有修改，需对应修改</span><br><span class="line">    treedata: [],</span><br><span class="line">    iframeUrl: <span class="string">''</span>, // 默认值 不能为空</span><br><span class="line">    iframePrefix: <span class="string">'http://localhost:3000'</span>,</span><br><span class="line">    iframeLoading: <span class="literal">true</span>,</span><br><span class="line">    iframeHeight: 600,</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">componentDidMount</span></span>() &#123;</span><br><span class="line">    // iframe的高度</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      iframeHeight: $(<span class="string">'body'</span>).height() - 280,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 发送消息 添加监听</span><br><span class="line">    window.addEventListener(<span class="string">'message'</span>, this.messageEvent);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">componentWillUnmount</span></span>() &#123;</span><br><span class="line">    // 移除监听</span><br><span class="line">    window.removeEventListener(<span class="string">'message'</span>, this.messageEvent);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> // iframe传来的数据，初始loading为<span class="literal">true</span>,什么时候iframe传来数据，改为<span class="literal">false</span>,体现一个加载过程，用户体验良好</span><br><span class="line">  messageEvent = event =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (event.data === <span class="string">'loadSuccess'</span>) &#123;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        iframeLoading: <span class="literal">false</span>,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    const &#123; value, treedata, iframeUrl, iframePrefix, iframeLoading, iframeHeight &#125; = this.state;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;PageHeaderWrapper content=<span class="string">"content"</span>&gt;</span><br><span class="line">        &lt;Card bordered=&#123;<span class="literal">false</span>&#125;&gt;</span><br><span class="line">          &lt;div className=&#123;styles.iframeContain&#125;&gt;</span><br><span class="line">            &lt;Spin tip=<span class="string">"Loading..."</span> spinning=&#123;iframeLoading&#125;&gt;</span><br><span class="line">              &lt;iframe</span><br><span class="line">                id=<span class="string">"monitorBox"</span></span><br><span class="line">                className=<span class="string">"monitorBox"</span></span><br><span class="line">                title=<span class="string">"monitor"</span></span><br><span class="line">                src=&#123;`<span class="variable">$&#123;iframePrefix&#125;</span><span class="variable">$&#123;iframeUrl&#125;</span>&amp;monitorFlag=<span class="literal">true</span>`&#125;</span><br><span class="line">                width=<span class="string">"100%"</span></span><br><span class="line">                height=&#123;iframeHeight&#125;</span><br><span class="line">                frameBorder=<span class="string">"0"</span></span><br><span class="line">              /&gt;</span><br><span class="line">            &lt;/Spin&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/Card&gt;</span><br><span class="line">      &lt;/PageHeaderWrapper&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default Monitoring;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h3 id="2-garafana源码修改样式"><a href="#2-garafana源码修改样式" class="headerlink" title="2.garafana源码修改样式"></a>2.garafana源码修改样式</h3><p>iframe不跨域的话，可以通过以下方法直接获得子元素内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"iframe"</span>)[0].contentWindow.document</span><br></pre></td></tr></table></figure>
+
+<p>但是如果是跨域的话，是获取不到的，所以不能直接修改元素样式，需要从引入的界面本身去修改代码<br>如果是引入服务器的garafana，没有办法直接查看修改结果，所以需要在本地搭建garafana=&gt;localhost:3000，并修改本地配置，在本地修改源码测试，然后替换服务器的garafana源码；<br>源码目录<br><img src="/images/garafana界面样式修改/源码目录.png"><br>修改/grafana/public/views目录下的index.html,确认代码无误后，对应复制到index-template.html，不能替换，index.html和index-template.html是有区别的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;script src=<span class="string">"https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body class=<span class="string">"theme-[[ .Theme ]] [[.AppNameBodyClass]]"</span>&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">     /*此处为源代码样式，为使博客简介，删掉了 */</span><br><span class="line"></span><br><span class="line">     /*iframe-different为父元素，对子元素样式修改*/</span><br><span class="line">    .iframe-differrent .dashboard-row__actions,.iframe-small .dashboard-row__actions&#123;</span><br><span class="line">      display: none !important;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">   // 添加代码！！！！！！！！！！！！   </span><br><span class="line">   // 函数在最外层父元素添加iframe-differrent类名 执行函数成功后，发送消息给父级页面</span><br><span class="line">      <span class="keyword">function</span> <span class="function"><span class="title">changeDash</span></span>()&#123;</span><br><span class="line">        // sidemenu与main-view是兄弟元素，所以用js操作控制样式，其他子元素直接写样式就可以，不需都用js操作样式</span><br><span class="line">        document.getElementsByClassName(<span class="string">"sidemenu"</span>)[0].style.cssText =<span class="string">"display:none!important;visibility:hidden"</span>;</span><br><span class="line">        $(<span class="string">".main-view"</span>).addClass(<span class="string">"iframe-differrent"</span>);</span><br><span class="line">        window.parent.postMessage(<span class="string">"loadSuccess"</span>,<span class="string">"*"</span>);</span><br><span class="line">      &#125;  </span><br><span class="line">  &lt;/script&gt; </span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    window.grafanaBootData = &#123;</span><br><span class="line">      user: [[.User]],</span><br><span class="line">      settings: [[.Settings]],</span><br><span class="line">      navTree: [[.NavTree]]</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">		// In <span class="keyword">case</span> the js files fails to load the code below will show an info message.</span><br><span class="line">    window.onload = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">      var preloader = document.getElementsByClassName(<span class="string">"preloader"</span>);</span><br><span class="line">      <span class="keyword">if</span> (preloader.length) &#123;</span><br><span class="line">        preloader[0].className = <span class="string">"preloader preloader--done"</span>;</span><br><span class="line">      &#125;  </span><br><span class="line">      </span><br><span class="line">      // 添加代码！！！！！！！！！！！！</span><br><span class="line">      // 如果获取到的地址含有monitorFlag参数，说明是iframe引入的页面，执行函数</span><br><span class="line">      <span class="keyword">if</span>(window.location.href.indexOf(<span class="string">"monitorFlag"</span>)!==-1)&#123;</span><br><span class="line">        changeDash();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	[[<span class="keyword">if</span> .GoogleTagManagerId]]</span><br><span class="line">		&lt;!-- Google Tag Manager --&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">			dataLayer = [&#123;</span><br><span class="line">				<span class="string">'IsSignedIn'</span>: <span class="string">'[[.User.IsSignedIn]]'</span>,</span><br><span class="line">				<span class="string">'Email'</span>: <span class="string">'[[.User.Email]]'</span>,</span><br><span class="line">				<span class="string">'Name'</span>: <span class="string">'[[.User.Name]]'</span>,</span><br><span class="line">				<span class="string">'UserId'</span>: <span class="string">'[[.User.Id]]'</span>,</span><br><span class="line">				<span class="string">'OrgId'</span>: <span class="string">'[[.User.OrgId]]'</span>,</span><br><span class="line">				<span class="string">'OrgName'</span>: <span class="string">'[[.User.OrgName]]'</span>,</span><br><span class="line">      &#125;];</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">		&lt;noscript&gt;</span><br><span class="line">			&lt;iframe src=<span class="string">"//www.googletagmanager.com/ns.html?id=[[.GoogleTagManagerId]]"</span> height=<span class="string">"0"</span> width=<span class="string">"0"</span> style=<span class="string">"display:none;visibility:hidden"</span>&gt;&lt;/iframe&gt;</span><br><span class="line">		&lt;/noscript&gt;</span><br><span class="line">		&lt;script&gt;(<span class="keyword">function</span> (w, d, s, l, i) &#123;</span><br><span class="line">				w[l] = w[l] || []; w[l].push(&#123; <span class="string">'gtm.start'</span>: new Date().getTime(), event: <span class="string">'gtm.js'</span> &#125;); var f = d.getElementsByTagName(s)[0],</span><br><span class="line">					j = d.createElement(s), dl = l != <span class="string">'dataLayer'</span> ? <span class="string">'&amp;l='</span> + l : <span class="string">''</span>; j.async = <span class="literal">true</span>; j.src = <span class="string">'//www.googletagmanager.com/gtm.js?id='</span> + i + dl; f.parentNode.insertBefore(j, f);</span><br><span class="line">			&#125;)(window, document, <span class="string">'script'</span>, <span class="string">'dataLayer'</span>, <span class="string">'[[.GoogleTagManagerId]]'</span>);&lt;/script&gt;</span><br><span class="line">		&lt;!-- End Google Tag Manager --&gt;</span><br><span class="line">  [[end]]</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"public/build/vendor.9d62d98149547e1107ad.js"</span>&gt;&lt;/script&gt;&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"public/build/app.9d62d98149547e1107ad.js"</span>&gt;&lt;/script&gt;&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-garafana本地配置与调试"><a href="#3-garafana本地配置与调试" class="headerlink" title="3.garafana本地配置与调试"></a>3.garafana本地配置与调试</h3><p>下载garafana安装，然后在安装目录运行exe文件，<br><img src="/images/garafana界面样式修改/garafana服务.png"><br>双击grafana-cli.exe服务，如果重启可在任务管理器中找到对应服务重启，查看对应修改结果<br><img src="/images/garafana界面样式修改/任务管理器.png"><br>双击grafana-server.exe，会打开一个命令窗口，关掉窗口，服务对应关闭<br>端口可以配置，默认3000，打开：localhost:3000,打开garafana页面</p>
+<h4 id="配置遇到的问题"><a href="#配置遇到的问题" class="headerlink" title="配置遇到的问题"></a>配置遇到的问题</h4><ul>
+<li>访问不到的情况<br>可能是防火墙端口不允许，<a href="https://jingyan.baidu.com/album/624e74590da64d34e8ba5aa0.html?picindex=1" target="_blank" rel="noopener">添加防火墙端口</a><img src="/images/garafana界面样式修改/端口问题.png">
+
+</li>
+</ul>
+<h4 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h4><ul>
+<li><p>配置文件位置</p>
+<img src="/images/garafana界面样式修改/配置文件位置.png">
+<img src="/images/garafana界面样式修改/一些参数.png">
+</li>
+<li><p>如果其他页面需要iframe引入，需配置允许引入</p>
+<img src="/images/garafana界面样式修改/允许引入.png">
+
+</li>
+</ul>
 
           
         
@@ -684,16 +998,26 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.lastIndexOf(<span class="string">"a"</span>)); // 4 数字4</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>replace 将字符串中的一些字符替换为另一些字符;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.replace(<span class="string">"ab"</span>,<span class="string">"12"</span>)); // 12cda</span><br><span class="line">console.log(str.replace(<span class="string">"a"</span>,12)); // 12bcda 只可替换第一次</span><br><span class="line">console.log(str.replace(/(a)/g,<span class="string">"12"</span>));// 12bcd12 替换所有</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">console.log(str.replace(<span class="string">"ab"</span>,<span class="string">"12"</span>)); // 12cda</span><br><span class="line">console.log(str.replace(<span class="string">"a"</span>,12)); // 12bcda 只可替换第一次</span><br><span class="line">console.log(str.replace(/(a)/g,<span class="string">"12"</span>));// 12bcd12 替换所有</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h4 id="2-2-3截取类型"><a href="#2-2-3截取类型" class="headerlink" title="2.2.3截取类型"></a>2.2.3截取类型</h4><ul>
-<li>slice(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置取到结尾；slice参数可以是负数，如果是负数，从-1开始的是字符串结尾</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.slice(0,1)); // a</span><br><span class="line">console.log(str.slice(0,-1));// abcd</span><br><span class="line">console.log(str.slice(-2,-1));// d</span><br><span class="line">console.log(str.slice(0)); // abcda 只传一个参数 截取到最后 abcda</span><br><span class="line">``` </span><br><span class="line">* substring(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置，取到结尾；与slice的区别是不接收负值</span><br><span class="line">``` bash</span><br><span class="line">console.log(str.substring(0)); // abcda</span><br><span class="line">```  </span><br><span class="line">* substr(start,length) 从指定的位置开始取指定长度的字符串，如果没有指定长度，从指定开始位置取到结尾</span><br><span class="line">``` bash</span><br><span class="line">console.log(str.substr(1));// bcda</span><br><span class="line">console.log(str.substr(1,2));// bc</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">#### 2.2.4转换类型</span></span><br><span class="line"></span><br><span class="line">* split(<span class="string">"分割位置"</span>,[指定的长度]) 将严格字符串分割成数组</span><br><span class="line">``` bash</span><br><span class="line">var str = <span class="string">"ab,c,da"</span>;</span><br><span class="line">console.log(str.split(<span class="string">","</span>));// [<span class="string">"ab"</span>,<span class="string">"c"</span>,<span class="string">"da"</span>]</span><br><span class="line">console.log(str.split(<span class="string">","</span>,1));// [<span class="string">"ab"</span>]</span><br></pre></td></tr></table></figure>
+<li><p>slice(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置取到结尾；slice参数可以是负数，如果是负数，从-1开始的是字符串结尾</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.slice(0,1)); // a</span><br><span class="line">console.log(str.slice(0,-1)); // abcd</span><br><span class="line">console.log(str.slice(-2,-1)); // d</span><br><span class="line">console.log(str.slice(0));  // abcda 只传一个参数 截取到最后 abcda</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>substring(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置，取到结尾；与slice的区别是不接收负值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.substring(0)); // abcda</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>substr(start,length) 从指定的位置开始取指定长度的字符串，如果没有指定长度，从指定开始位置取到结尾</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.substr(1));// bcda</span><br><span class="line">console.log(str.substr(1,2));// bc</span><br></pre></td></tr></table></figure>
 
-<ul>
+</li>
+</ul>
+<h4 id="2-2-4转换类型"><a href="#2-2-4转换类型" class="headerlink" title="2.2.4转换类型"></a>2.2.4转换类型</h4><ul>
+<li><p>split(“分割位置”,[指定的长度]) 将严格字符串分割成数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">"ab,c,da"</span>;</span><br><span class="line">console.log(str.split(<span class="string">","</span>));// [<span class="string">"ab"</span>,<span class="string">"c"</span>,<span class="string">"da"</span>]</span><br><span class="line">console.log(str.split(<span class="string">","</span>,1));// [<span class="string">"ab"</span>]</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>toLowerCase 用于把字符串转化为小写,不用传参数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.toLowerCase());// ab,c,da</span><br></pre></td></tr></table></figure>
 </li>
@@ -1613,152 +1937,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/10/04/react-native-picker选择器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="师志花">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="花花的开发总结">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/04/react-native-picker选择器/" itemprop="url">react-native-picker选择器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T18:04:54+08:00">
-                2019-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>react-native-picker选择器</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/04/react-native-picker选择器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1809,7 +1987,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1820,7 +1998,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1831,7 +2009,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

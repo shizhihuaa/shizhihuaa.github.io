@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="花花的开发总结">
 <meta property="og:description" content="项目在需要对数据做处理的时候，经常需要百度一些最简单的数组、字符串方法，很是浪费时间；对这些方法经常回顾、归纳、总结，coding效率会更高一些，本文章将会对常用处理数据场景及方法做总结，希望对你有所帮助。 1场景归纳 根据indexOf的结果是否为-1判断是否包含这个字符串ant design pro中判断是否有管理员权限 1&apos;admin&apos;.indexOf(getAuthority()) !==">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-11T07:12:32.299Z">
+<meta property="og:updated_time" content="2019-11-11T07:53:05.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串对象常用处理数据的方法">
 <meta name="twitter:description" content="项目在需要对数据做处理的时候，经常需要百度一些最简单的数组、字符串方法，很是浪费时间；对这些方法经常回顾、归纳、总结，coding效率会更高一些，本文章将会对常用处理数据场景及方法做总结，希望对你有所帮助。 1场景归纳 根据indexOf的结果是否为-1判断是否包含这个字符串ant design pro中判断是否有管理员权限 1&apos;admin&apos;.indexOf(getAuthority()) !==">
@@ -392,16 +392,26 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.lastIndexOf(<span class="string">"a"</span>)); // 4 数字4</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>replace 将字符串中的一些字符替换为另一些字符;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.replace(<span class="string">"ab"</span>,<span class="string">"12"</span>)); // 12cda</span><br><span class="line">console.log(str.replace(<span class="string">"a"</span>,12)); // 12bcda 只可替换第一次</span><br><span class="line">console.log(str.replace(/(a)/g,<span class="string">"12"</span>));// 12bcd12 替换所有</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">console.log(str.replace(<span class="string">"ab"</span>,<span class="string">"12"</span>)); // 12cda</span><br><span class="line">console.log(str.replace(<span class="string">"a"</span>,12)); // 12bcda 只可替换第一次</span><br><span class="line">console.log(str.replace(/(a)/g,<span class="string">"12"</span>));// 12bcd12 替换所有</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h4 id="2-2-3截取类型"><a href="#2-2-3截取类型" class="headerlink" title="2.2.3截取类型"></a>2.2.3截取类型</h4><ul>
-<li>slice(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置取到结尾；slice参数可以是负数，如果是负数，从-1开始的是字符串结尾</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.slice(0,1)); // a</span><br><span class="line">console.log(str.slice(0,-1));// abcd</span><br><span class="line">console.log(str.slice(-2,-1));// d</span><br><span class="line">console.log(str.slice(0)); // abcda 只传一个参数 截取到最后 abcda</span><br><span class="line">``` </span><br><span class="line">* substring(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置，取到结尾；与slice的区别是不接收负值</span><br><span class="line">``` bash</span><br><span class="line">console.log(str.substring(0)); // abcda</span><br><span class="line">```  </span><br><span class="line">* substr(start,length) 从指定的位置开始取指定长度的字符串，如果没有指定长度，从指定开始位置取到结尾</span><br><span class="line">``` bash</span><br><span class="line">console.log(str.substr(1));// bcda</span><br><span class="line">console.log(str.substr(1,2));// bc</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">#### 2.2.4转换类型</span></span><br><span class="line"></span><br><span class="line">* split(<span class="string">"分割位置"</span>,[指定的长度]) 将严格字符串分割成数组</span><br><span class="line">``` bash</span><br><span class="line">var str = <span class="string">"ab,c,da"</span>;</span><br><span class="line">console.log(str.split(<span class="string">","</span>));// [<span class="string">"ab"</span>,<span class="string">"c"</span>,<span class="string">"da"</span>]</span><br><span class="line">console.log(str.split(<span class="string">","</span>,1));// [<span class="string">"ab"</span>]</span><br></pre></td></tr></table></figure>
+<li><p>slice(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置取到结尾；slice参数可以是负数，如果是负数，从-1开始的是字符串结尾</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.slice(0,1)); // a</span><br><span class="line">console.log(str.slice(0,-1)); // abcd</span><br><span class="line">console.log(str.slice(-2,-1)); // d</span><br><span class="line">console.log(str.slice(0));  // abcda 只传一个参数 截取到最后 abcda</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>substring(start,end) 从指定的开始位置到结束位置（不包括）的所有字符串，如果不指定结束位置，则从指定的开始位置，取到结尾；与slice的区别是不接收负值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.substring(0)); // abcda</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>substr(start,length) 从指定的位置开始取指定长度的字符串，如果没有指定长度，从指定开始位置取到结尾</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.substr(1));// bcda</span><br><span class="line">console.log(str.substr(1,2));// bc</span><br></pre></td></tr></table></figure>
 
-<ul>
+</li>
+</ul>
+<h4 id="2-2-4转换类型"><a href="#2-2-4转换类型" class="headerlink" title="2.2.4转换类型"></a>2.2.4转换类型</h4><ul>
+<li><p>split(“分割位置”,[指定的长度]) 将严格字符串分割成数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = <span class="string">"ab,c,da"</span>;</span><br><span class="line">console.log(str.split(<span class="string">","</span>));// [<span class="string">"ab"</span>,<span class="string">"c"</span>,<span class="string">"da"</span>]</span><br><span class="line">console.log(str.split(<span class="string">","</span>,1));// [<span class="string">"ab"</span>]</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>toLowerCase 用于把字符串转化为小写,不用传参数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.toLowerCase());// ab,c,da</span><br></pre></td></tr></table></figure>
 </li>
@@ -532,7 +542,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -543,7 +553,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -554,7 +564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -597,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1场景归纳"><span class="nav-number">1.</span> <span class="nav-text">1场景归纳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2方法归纳"><span class="nav-number">2.</span> <span class="nav-text">2方法归纳</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1属性"><span class="nav-number">2.1.</span> <span class="nav-text">2.1属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2方法"><span class="nav-number">2.2.</span> <span class="nav-text">2.2方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1查找类型"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1查找类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2获取类型"><span class="nav-number">2.3.</span> <span class="nav-text">2.2.2获取类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3截取类型"><span class="nav-number">2.4.</span> <span class="nav-text">2.2.3截取类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5样式类型"><span class="nav-number">2.5.</span> <span class="nav-text">2.2.5样式类型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1场景归纳"><span class="nav-number">1.</span> <span class="nav-text">1场景归纳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2方法归纳"><span class="nav-number">2.</span> <span class="nav-text">2方法归纳</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1属性"><span class="nav-number">2.1.</span> <span class="nav-text">2.1属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2方法"><span class="nav-number">2.2.</span> <span class="nav-text">2.2方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1查找类型"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1查找类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2获取类型"><span class="nav-number">2.3.</span> <span class="nav-text">2.2.2获取类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3截取类型"><span class="nav-number">2.4.</span> <span class="nav-text">2.2.3截取类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4转换类型"><span class="nav-number">2.5.</span> <span class="nav-text">2.2.4转换类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5样式类型"><span class="nav-number">2.6.</span> <span class="nav-text">2.2.5样式类型</span></a></li></ol></li></ol></div>
             
 
           </div>
