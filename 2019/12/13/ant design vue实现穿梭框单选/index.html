@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ant design vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近有一个朋友问了一个问题，ant design vue的穿梭框如何实现单选，且禁用顶部的全选checkbox之前项目中用到的是ant design pro,没有用到ant design pro of vue，也没有用过穿梭框组件；所以克隆项目写了一个demo,并就开始一个ant design pro of vue项目做一个梳理总结 1.克隆ant design pro of vue项目打开网站，">
+<meta name="keywords" content="ant design vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ant design vue实现穿梭框单选">
+<meta property="og:url" content="http://shizhihuaa.github.io/2019/12/13/ant design vue实现穿梭框单选/index.html">
+<meta property="og:site_name" content="花花的开发总结">
+<meta property="og:description" content="最近有一个朋友问了一个问题，ant design vue的穿梭框如何实现单选，且禁用顶部的全选checkbox之前项目中用到的是ant design pro,没有用到ant design pro of vue，也没有用过穿梭框组件；所以克隆项目写了一个demo,并就开始一个ant design pro of vue项目做一个梳理总结 1.克隆ant design pro of vue项目打开网站，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20vue实现穿梭框单选/添加路由.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20vue实现穿梭框单选/动态引入页面组件.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20vue实现穿梭框单选/新增页面.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20vue实现穿梭框单选/注册组件.png">
+<meta property="og:image" content="http://shizhihuaa.github.io/images/ant%20design%20vue实现穿梭框单选/全局样式.png">
+<meta property="og:updated_time" content="2019-12-13T07:54:09.298Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ant design vue实现穿梭框单选">
+<meta name="twitter:description" content="最近有一个朋友问了一个问题，ant design vue的穿梭框如何实现单选，且禁用顶部的全选checkbox之前项目中用到的是ant design pro,没有用到ant design pro of vue，也没有用过穿梭框组件；所以克隆项目写了一个demo,并就开始一个ant design pro of vue项目做一个梳理总结 1.克隆ant design pro of vue项目打开网站，">
+<meta name="twitter:image" content="http://shizhihuaa.github.io/images/ant%20design%20vue实现穿梭框单选/添加路由.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://shizhihuaa.github.io/2019/12/13/ant design vue实现穿梭框单选/">
+
+
+
+
+
+  <title>ant design vue实现穿梭框单选 | 花花的开发总结</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9bdd2d5bd2f082bd61cc47b8221002a4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花花的开发总结</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">勿以浮沙筑高台</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/12/13/ant design vue实现穿梭框单选/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="师志花">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花花的开发总结">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ant design vue实现穿梭框单选</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-13T15:15:42+08:00">
+                2019-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ant-design-vue/" itemprop="url" rel="index">
+                    <span itemprop="name">ant design vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近有一个朋友问了一个问题，ant design vue的穿梭框如何实现单选，且禁用顶部的全选checkbox<br>之前项目中用到的是ant design pro,没有用到ant design pro of vue，也没有用过穿梭框组件；<br>所以克隆项目写了一个demo,并就开始一个ant design pro of vue项目做一个梳理总结</p>
+<h2 id="1-克隆ant-design-pro-of-vue项目"><a href="#1-克隆ant-design-pro-of-vue项目" class="headerlink" title="1.克隆ant design pro of vue项目"></a>1.克隆ant design pro of vue项目</h2><p>打开<a href="https://pro.loacg.com/docs/getting-started" target="_blank" rel="noopener">网站</a>，克隆项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/sendya/ant-design-pro-vue.git antofvue(你的项目文件夹名称)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-ant-design-pro-of-vue新增页面"><a href="#2-ant-design-pro-of-vue新增页面" class="headerlink" title="2.ant design pro of vue新增页面"></a>2.ant design pro of vue新增页面</h2><ul>
+<li><p>添加路由<br>\antofvue\src\config\router.config.js</p>
+<img src="/images/ant design vue实现穿梭框单选/添加路由.png">
+</li>
+<li><p>动态引入页面组件<br>\antofvue\src\router\generator-routers.js</p>
+<img src="/images/ant design vue实现穿梭框单选/动态引入页面组件.png">
+</li>
+<li><p>新增vue文件<br>\antofvue\src\views\form 路径下新增Tansfer的vue文件</p>
+<img src="/images/ant design vue实现穿梭框单选/新增页面.png">
+
+</li>
+</ul>
+<h2 id="3-复制穿梭框demo"><a href="#3-复制穿梭框demo" class="headerlink" title="3.复制穿梭框demo"></a>3.复制穿梭框demo</h2><h3 id="3-1eslint规则"><a href="#3-1eslint规则" class="headerlink" title="3.1eslint规则"></a>3.1eslint规则</h3><p>对于项目中有语法检查，直接复制过来的代码会有错误标识</p>
+<ul>
+<li>代码中不可以有分号</li>
+<li>最后一个参数后面不可以有逗号</li>
+<li>每个方法后面要有空格</li>
+<li>每行代码的空格缩进</li>
+<li>script结束标签后面要空一行</li>
+</ul>
+<h3 id="3-2组件报错Unknown-custom-element-did-you-register-the-component-correctly-For-recursive-components-make-sure-to-provide-the-“name”-option"><a href="#3-2组件报错Unknown-custom-element-did-you-register-the-component-correctly-For-recursive-components-make-sure-to-provide-the-“name”-option" class="headerlink" title="3.2组件报错Unknown custom element:  - did you register the component correctly? For recursive components, make sure to provide the “name” option."></a>3.2组件报错Unknown custom element: <a-transfer> - did you register the component correctly? For recursive components, make sure to provide the “name” option.</a-transfer></h3><p>因为没有注册穿梭框组件，改文件 \antofvue\src\core\lazy_lib\components_use.js<br><img src="/images/ant design vue实现穿梭框单选/注册组件.png"></p>
+<h2 id="4-主要实现代码"><a href="#4-主要实现代码" class="headerlink" title="4.主要实现代码"></a>4.主要实现代码</h2><h3 id="4-1实现单选"><a href="#4-1实现单选" class="headerlink" title="4.1实现单选"></a>4.1实现单选</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">handleSelectChange (sourceSelectedKeys, targetSelectedKeys) &#123;</span><br><span class="line">  // this.selectedKeys = [...sourceSelectedKeys, ...targetSelectedKeys]</span><br><span class="line">  // 在选择多选框的方法中，使选中的数组长度为最后一个选中的元素，使其数组长度为1，实现单选</span><br><span class="line">  this.selectedKeys = [sourceSelectedKeys[sourceSelectedKeys.length - 1]]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2修改样式去掉全选checkbox"><a href="#4-2修改样式去掉全选checkbox" class="headerlink" title="4.2修改样式去掉全选checkbox"></a>4.2修改样式去掉全选checkbox</h3><p>实现单选了，但是上面还有全选；利用样式去掉它 \antofvue\src\App.vue<br><img src="/images/ant design vue实现穿梭框单选/全局样式.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ant-design-vue/" rel="tag"># ant design vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/11/ant design pro带分页 自定义表格列 搜索表格组件封装/" rel="next" title="ant design pro带分页 自定义表格列 搜索表格组件封装">
+                <i class="fa fa-chevron-left"></i> ant design pro带分页 自定义表格列 搜索表格组件封装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">师志花</p>
+              <p class="site-description motion-element" itemprop="description">react-native vue react angular js 前端</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shizhihuaa" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-克隆ant-design-pro-of-vue项目"><span class="nav-number">1.</span> <span class="nav-text">1.克隆ant design pro of vue项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ant-design-pro-of-vue新增页面"><span class="nav-number">2.</span> <span class="nav-text">2.ant design pro of vue新增页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-复制穿梭框demo"><span class="nav-number">3.</span> <span class="nav-text">3.复制穿梭框demo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1eslint规则"><span class="nav-number">3.1.</span> <span class="nav-text">3.1eslint规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2组件报错Unknown-custom-element-did-you-register-the-component-correctly-For-recursive-components-make-sure-to-provide-the-“name”-option"><span class="nav-number">3.2.</span> <span class="nav-text">3.2组件报错Unknown custom element:  - did you register the component correctly? For recursive components, make sure to provide the “name” option.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-主要实现代码"><span class="nav-number">4.</span> <span class="nav-text">4.主要实现代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1实现单选"><span class="nav-number">4.1.</span> <span class="nav-text">4.1实现单选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2修改样式去掉全选checkbox"><span class="nav-number">4.2.</span> <span class="nav-text">4.2修改样式去掉全选checkbox</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">师志花</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="js,">
+  <meta name="keywords" content="react,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="在项目中当你对数组或对象做了数据处理后，可能你最后获取到的不是你想要的数据，很有可能是因为深拷贝和浅拷贝的问题，这里对这种问题做一个深入分析，以及这种场景的处理方案。 概念深拷贝浅拷贝处理方法JSON.parse(JSON.stringfy())">
-<meta name="keywords" content="js">
+<meta name="description" content="ant design pro中使用react-ace在react中使用react-ace,实现编辑代码  安装包 12npm install react-acenpm install brace  引入包 123456import brace from &apos;brace&apos;;import AceEditor from &apos;react-ace&apos;;import &apos;brace/mode/json&apos;;import">
+<meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不是你想要的数据？考虑是否深拷贝与浅拷贝的问题">
-<meta property="og:url" content="http://shizhihuaa.github.io/2019/11/08/不是你想要的数据？考虑是否深拷贝与浅拷贝的问题/index.html">
+<meta property="og:title" content="react-ace代码编辑">
+<meta property="og:url" content="http://shizhihuaa.github.io/2019/12/11/react-ace代码编辑/index.html">
 <meta property="og:site_name" content="花花的开发总结">
-<meta property="og:description" content="在项目中当你对数组或对象做了数据处理后，可能你最后获取到的不是你想要的数据，很有可能是因为深拷贝和浅拷贝的问题，这里对这种问题做一个深入分析，以及这种场景的处理方案。 概念深拷贝浅拷贝处理方法JSON.parse(JSON.stringfy())">
+<meta property="og:description" content="ant design pro中使用react-ace在react中使用react-ace,实现编辑代码  安装包 12npm install react-acenpm install brace  引入包 123456import brace from &apos;brace&apos;;import AceEditor from &apos;react-ace&apos;;import &apos;brace/mode/json&apos;;import">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-20T01:51:59.554Z">
+<meta property="og:updated_time" content="2019-12-11T08:54:27.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不是你想要的数据？考虑是否深拷贝与浅拷贝的问题">
-<meta name="twitter:description" content="在项目中当你对数组或对象做了数据处理后，可能你最后获取到的不是你想要的数据，很有可能是因为深拷贝和浅拷贝的问题，这里对这种问题做一个深入分析，以及这种场景的处理方案。 概念深拷贝浅拷贝处理方法JSON.parse(JSON.stringfy())">
+<meta name="twitter:title" content="react-ace代码编辑">
+<meta name="twitter:description" content="ant design pro中使用react-ace在react中使用react-ace,实现编辑代码  安装包 12npm install react-acenpm install brace  引入包 123456import brace from &apos;brace&apos;;import AceEditor from &apos;react-ace&apos;;import &apos;brace/mode/json&apos;;import">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://shizhihuaa.github.io/2019/11/08/不是你想要的数据？考虑是否深拷贝与浅拷贝的问题/">
+  <link rel="canonical" href="http://shizhihuaa.github.io/2019/12/11/react-ace代码编辑/">
 
 
 
 
 
-  <title>不是你想要的数据？考虑是否深拷贝与浅拷贝的问题 | 花花的开发总结</title>
+  <title>react-ace代码编辑 | 花花的开发总结</title>
   
 
 
@@ -260,7 +260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/11/08/不是你想要的数据？考虑是否深拷贝与浅拷贝的问题/">
+    <link itemprop="mainEntityOfPage" href="http://shizhihuaa.github.io/2019/12/11/react-ace代码编辑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="师志花">
@@ -277,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">不是你想要的数据？考虑是否深拷贝与浅拷贝的问题</h1>
+          <h1 class="post-title" itemprop="name headline">react-ace代码编辑</h1>
         
 
         <div class="post-meta">
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-08T17:32:29+08:00">
-                2019-11-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T16:38:11+08:00">
+                2019-12-11
               </time>
             
 
@@ -312,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
                   </a>
                 </span>
 
@@ -349,8 +349,21 @@
       
 
       
-        <p>在项目中当你对数组或对象做了数据处理后，可能你最后获取到的不是你想要的数据，很有可能是因为深拷贝和浅拷贝的问题，这里对这种问题做一个深入分析，以及这种场景的处理方案。</p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><h2 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h2><h3 id="JSON-parse-JSON-stringfy"><a href="#JSON-parse-JSON-stringfy" class="headerlink" title="JSON.parse(JSON.stringfy())"></a>JSON.parse(JSON.stringfy())</h3>
+        <h2 id="ant-design-pro中使用react-ace"><a href="#ant-design-pro中使用react-ace" class="headerlink" title="ant design pro中使用react-ace"></a>ant design pro中使用react-ace</h2><p>在react中使用react-ace,实现编辑代码</p>
+<ul>
+<li><p>安装包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install react-ace</span><br><span class="line">npm install brace</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引入包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import brace from <span class="string">'brace'</span>;</span><br><span class="line">import AceEditor from <span class="string">'react-ace'</span>;</span><br><span class="line"></span><br><span class="line">import <span class="string">'brace/mode/json'</span>;</span><br><span class="line">import <span class="string">'brace/mode/yaml'</span>;</span><br><span class="line">import <span class="string">'brace/theme/github'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>页面渲染</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;AceEditor</span><br><span class="line">  width=<span class="string">"100%"</span></span><br><span class="line">  mode=<span class="string">"json"</span></span><br><span class="line">  readOnly=&#123;fetchLoading || editLoading&#125;</span><br><span class="line">  value=&#123;fetchLoading ? <span class="string">'loading...'</span> : this.value&#125;</span><br><span class="line">  onChange=&#123;this.onChange&#125;</span><br><span class="line">  theme=<span class="string">"github"</span></span><br><span class="line">  name=<span class="string">"UNIQUE_ID_OF_DIV"</span></span><br><span class="line">  wrapEnabled=&#123;<span class="literal">true</span>&#125; // 换行</span><br><span class="line">  editorProps=&#123;&#123; <span class="variable">$blockScrolling</span>: Infinity &#125;&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>onChange方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onChange = newValue =&gt; &#123;</span><br><span class="line">  this.value = newValue;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     
@@ -367,7 +380,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/react/" rel="tag"># react</a>
           
         </div>
       
@@ -380,8 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/08/前端日志显示及下载/" rel="next" title="前端文件下载">
-                <i class="fa fa-chevron-left"></i> 前端文件下载
+              <a href="/2019/12/02/ant design vue渲染表格显示no data/" rel="next" title="ant design vue渲染表格显示no data">
+                <i class="fa fa-chevron-left"></i> ant design vue渲染表格显示no data
               </a>
             
           </div>
@@ -390,8 +403,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/08/ant design表单列表/" rel="prev" title="ant design表单多个input框动态增减">
-                ant design表单多个input框动态增减 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/11/ant design pro带分页 自定义表格列 搜索表格组件封装/" rel="prev" title="ant design pro带分页 自定义表格列 搜索表格组件封装">
+                ant design pro带分页 自定义表格列 搜索表格组件封装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -469,7 +482,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -480,7 +493,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -491,7 +504,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -534,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝"><span class="nav-number">1.1.</span> <span class="nav-text">深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝"><span class="nav-number">1.2.</span> <span class="nav-text">浅拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理方法"><span class="nav-number">2.</span> <span class="nav-text">处理方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-parse-JSON-stringfy"><span class="nav-number">2.1.</span> <span class="nav-text">JSON.parse(JSON.stringfy())</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ant-design-pro中使用react-ace"><span class="nav-number">1.</span> <span class="nav-text">ant design pro中使用react-ace</span></a></li></ol></div>
             
 
           </div>
